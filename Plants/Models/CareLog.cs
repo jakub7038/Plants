@@ -1,23 +1,35 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-public class CareLog
+namespace Plants.Models
 {
-    [Key]
-    public int Id { get; set; }
-
-    [Required]
-    public int PlantId { get; set; }
-    public CareLog(string action, string comment, DateTime careDate, int plantId)
+    public class CareLog
     {
-        Action = action ?? throw new ArgumentNullException(nameof(action));
-        Comment = comment ?? throw new ArgumentNullException(nameof(comment));
-        CareDate = careDate;
-        PlantId = plantId;
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        public int PlantId { get; set; }
+
+        [Required]
+        public string Action { get; set; } = null!;
+
+        public string? Comment { get; set; }
+
+        [Required]
+        public DateTime CareDate { get; set; }
+
+        [ForeignKey("PlantId")]
+        public Plant Plant { get; set; } = null!;
+
+        protected CareLog() { }
+
+        public CareLog(string action, string? comment, DateTime careDate, int plantId)
+        {
+            Action = action ?? throw new ArgumentNullException(nameof(action));
+            Comment = comment;
+            CareDate = careDate;
+            PlantId = plantId;
+        }
     }
-
-    public string Action { get; set; }
-    public string Comment { get; set; }
-    public DateTime CareDate { get; set; }
-
-    public Plant? Plant { get; set; }
 }

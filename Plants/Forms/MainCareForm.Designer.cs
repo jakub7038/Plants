@@ -1,6 +1,6 @@
 ﻿namespace Plants
 {
-    partial class Form1
+    partial class MainCareForm
     {
         /// <summary>
         ///  Required designer variable.

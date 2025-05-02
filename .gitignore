@@ -1,0 +1,56 @@
+### Visual Studio & .NET ###
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+*.userprefs
+*.aps
+*.pdb
+*.cache
+*.log
+*.vspscc
+*.vssscc
+*.sln.docstates
+
+### NuGet ###
+packages/
+[Nn]u[Gg]et.[Ll]ocal.[Ss]tore
+*.nupkg
+
+### Build Results ###
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.coverage
+
+### Environment Files ###
+appsettings.Development.json  # Ignore local development configs
+
+### PostgreSQL ###
+/pgdata/  # Local PostgreSQL data directory (if used)
+
+### IDE-Specific ###
+.idea/  # JetBrains Rider
+*.sln.iml
+
+### Temporary Files ###
+*.tmp
+*.temp
+*.TMP
+
+### Secrets ###
+*.secret
+*.env
+
+# Build and project folders
+[Bb]in/
+[Oo]bj/
+.vs/
+
+# Visual Studio files
+*.user
+*.suo
+*.userprefs
+*.vspscc
+*.vssscc
+*.sln.docstates

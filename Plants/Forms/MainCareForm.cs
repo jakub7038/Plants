@@ -1,8 +1,8 @@
 namespace Plants
 {
-    public partial class Form1 : Form
+    public partial class MainCareForm : Form
     {
-        public Form1()
+        public MainCareForm()
         {
             InitializeComponent();
         }
