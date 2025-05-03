@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Plants.Migrations
+namespace Plants.Data.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -36,7 +36,6 @@ namespace Plants.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     Region = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    Action = table.Column<string>(type: "text", nullable: false),
                     SpeciesId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
@@ -56,10 +55,10 @@ namespace Plants.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    PlantId = table.Column<int>(type: "integer", nullable: false),
-                    Action = table.Column<string>(type: "text", nullable: false),
+                    Action = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    CareDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Comment = table.Column<string>(type: "text", nullable: true),
-                    CareDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    PlantId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -78,9 +77,21 @@ namespace Plants.Migrations
                 column: "PlantId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Plants_Name",
+                table: "Plants",
+                column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Plants_SpeciesId",
                 table: "Plants",
                 column: "SpeciesId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Species_Name",
+                table: "Species",
+                column: "Name",
+                unique: true);
         }
 
         /// <inheritdoc />

@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Plants.Models
 {
@@ -24,13 +24,14 @@ namespace Plants.Models
 
         public ICollection<Plant> Plants { get; set; } = new List<Plant>();
 
-        protected Species() { }
+        public Species() { }
 
-        public Species(string name, string region, double idealTemperature)
+        public Species(string name, string region, double idealTemperature, double? humidity = null)
         {
-            Name = name ?? throw new ArgumentNullException(nameof(name));
-            Region = region ?? throw new ArgumentNullException(nameof(region));
+            Name = name;
+            Region = region;
             IdealTemperature = idealTemperature;
+            Humidity = humidity;
         }
     }
 }
