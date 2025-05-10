@@ -5,6 +5,7 @@ using Microsoft.Extensions.Hosting;
 using Plants.Data;
 using System;
 using System.Windows.Forms;
+using Plants.Forms;
 
 namespace Plants
 {
@@ -37,7 +38,7 @@ namespace Plants
                 return;
             }
 
-            Application.Run(new MainCareForm());
+            Application.Run(new SpeciesForm());
         }
 
         private static void SeedDatabase(IHost host)
@@ -56,5 +57,7 @@ namespace Plants
                 Console.WriteLine($"B³¹d: {ex.Message}");
             }
         }
+
+
     }
 }

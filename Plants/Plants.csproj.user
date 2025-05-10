@@ -4,5 +4,11 @@
     <Compile Update="Forms\MainCareForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\PlantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SpeciesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
