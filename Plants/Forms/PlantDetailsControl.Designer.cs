@@ -3,67 +3,66 @@
     partial class PlantDetailsControl
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblSpecies;
-        private System.Windows.Forms.Label lblRegion;
-        private System.Windows.Forms.Label lblIdealTemperature;
+        private Label lblName;
+        private Label lblRegion;
+        private Label lblSpecies;
+        private Label lblTemp;
+        private Label lblHumidity;
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            if (disposing && (components != null))
                 components.Dispose();
             base.Dispose(disposing);
         }
 
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            lblName = new System.Windows.Forms.Label();
-            lblSpecies = new System.Windows.Forms.Label();
-            lblRegion = new System.Windows.Forms.Label();
-            lblIdealTemperature = new System.Windows.Forms.Label();
-
+            lblName = new Label();
+            lblRegion = new Label();
+            lblSpecies = new Label();
+            lblTemp = new Label();
+            lblHumidity = new Label();
             SuspendLayout();
 
-            // lblName
             lblName.AutoSize = true;
-            lblName.Location = new System.Drawing.Point(10, 10);
+            lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblName.Location = new System.Drawing.Point(8, 8);
             lblName.Name = "lblName";
-            lblName.Size = new System.Drawing.Size(100, 15);
-            lblName.TabIndex = 0;
-            lblName.Text = "Nazwa rośliny:";
+            lblName.Size = new System.Drawing.Size(51, 21);
+            lblName.Text = "Name";
 
-            // lblSpecies
-            lblSpecies.AutoSize = true;
-            lblSpecies.Location = new System.Drawing.Point(10, 40);
-            lblSpecies.Name = "lblSpecies";
-            lblSpecies.Size = new System.Drawing.Size(100, 15);
-            lblSpecies.TabIndex = 1;
-            lblSpecies.Text = "Gatunek:";
-
-            // lblRegion
             lblRegion.AutoSize = true;
-            lblRegion.Location = new System.Drawing.Point(10, 70);
+            lblRegion.Location = new System.Drawing.Point(8, 40);
             lblRegion.Name = "lblRegion";
-            lblRegion.Size = new System.Drawing.Size(100, 15);
-            lblRegion.TabIndex = 2;
-            lblRegion.Text = "Region:";
+            lblRegion.Size = new System.Drawing.Size(45, 15);
+            lblRegion.Text = "Region";
 
-            // lblIdealTemperature
-            lblIdealTemperature.AutoSize = true;
-            lblIdealTemperature.Location = new System.Drawing.Point(10, 100);
-            lblIdealTemperature.Name = "lblIdealTemperature";
-            lblIdealTemperature.Size = new System.Drawing.Size(120, 15);
-            lblIdealTemperature.TabIndex = 3;
-            lblIdealTemperature.Text = "Idealna temperatura:";
+            lblSpecies.AutoSize = true;
+            lblSpecies.Location = new System.Drawing.Point(8, 60);
+            lblSpecies.Name = "lblSpecies";
+            lblSpecies.Size = new System.Drawing.Size(49, 15);
+            lblSpecies.Text = "Species";
 
-            // PlantDetailsControl
-            Controls.Add(lblIdealTemperature);
+            lblTemp.AutoSize = true;
+            lblTemp.Location = new System.Drawing.Point(8, 80);
+            lblTemp.Name = "lblTemp";
+            lblTemp.Size = new System.Drawing.Size(60, 15);
+            lblTemp.Text = "Temp";
+
+            lblHumidity.AutoSize = true;
+            lblHumidity.Location = new System.Drawing.Point(8, 100);
+            lblHumidity.Name = "lblHumidity";
+            lblHumidity.Size = new System.Drawing.Size(60, 15);
+            lblHumidity.Text = "Humidity";
+
+            Controls.Add(lblName);
             Controls.Add(lblRegion);
             Controls.Add(lblSpecies);
-            Controls.Add(lblName);
+            Controls.Add(lblTemp);
+            Controls.Add(lblHumidity);
             Name = "PlantDetailsControl";
-            Size = new System.Drawing.Size(300, 150);
+            Size = new System.Drawing.Size(400, 140);
             ResumeLayout(false);
             PerformLayout();
         }

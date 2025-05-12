@@ -13,10 +13,13 @@ namespace Plants.Forms
 
         public void LoadPlant(Plant plant)
         {
-            lblName.Text = $"Nazwa: {plant.Name}";
-            lblSpecies.Text = $"Gatunek: {plant.Species.Name}";
-            lblRegion.Text = $"Region: {plant.Region}";
-            lblIdealTemperature.Text = $"Idealna temperatura: {plant.Species.IdealTemperature} °C";
+            lblName.Text = plant.Name;
+            lblRegion.Text = plant.Region;
+            lblSpecies.Text = plant.Species.Name;
+            lblTemp.Text = $"Ideal Temp: {plant.Species.IdealTemperature} °C";
+            lblHumidity.Text = plant.Species.Humidity.HasValue
+                ? $"Humidity: {plant.Species.Humidity}%"
+                : "Humidity: N/A";
         }
     }
 }

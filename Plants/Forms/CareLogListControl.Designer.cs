@@ -1,13 +1,18 @@
-﻿namespace Plants.Forms
+﻿using System.Windows.Forms;
+
+namespace Plants.Forms
 {
     partial class CareLogListControl
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.ListBox listBoxCareLogs;
+        private ListView listViewLogs = null!;
+        private ColumnHeader colDate = null!;
+        private ColumnHeader colAction = null!;
+        private ColumnHeader colComment = null!;
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            if (disposing && (components != null))
                 components.Dispose();
             base.Dispose(disposing);
         }
@@ -15,23 +20,32 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            listBoxCareLogs = new System.Windows.Forms.ListBox();
+            listViewLogs = new ListView();
+            colDate = new ColumnHeader();
+            colAction = new ColumnHeader();
+            colComment = new ColumnHeader();
 
             SuspendLayout();
 
-            // listBoxCareLogs
-            listBoxCareLogs.Dock = System.Windows.Forms.DockStyle.Fill;
-            listBoxCareLogs.FormattingEnabled = true;
-            listBoxCareLogs.ItemHeight = 15;
-            listBoxCareLogs.Location = new System.Drawing.Point(0, 0);
-            listBoxCareLogs.Name = "listBoxCareLogs";
-            listBoxCareLogs.Size = new System.Drawing.Size(300, 150);
-            listBoxCareLogs.TabIndex = 0;
+            listViewLogs.Columns.AddRange(new[] { colDate, colAction, colComment });
+            listViewLogs.Dock = DockStyle.Fill;
+            listViewLogs.View = View.Details;
+            listViewLogs.FullRowSelect = true;
+            listViewLogs.GridLines = true;
+            listViewLogs.HeaderStyle = ColumnHeaderStyle.Clickable;
 
-            // CareLogListControl
-            Controls.Add(listBoxCareLogs);
+            colDate.Text = "Date";
+            colDate.Width = 120;
+
+            colAction.Text = "Action";
+            colAction.Width = 100;
+
+            colComment.Text = "Comment";
+            colComment.Width = 200;
+
+            Controls.Add(listViewLogs);
             Name = "CareLogListControl";
-            Size = new System.Drawing.Size(300, 150);
+            Size = new System.Drawing.Size(400, 200);
             ResumeLayout(false);
         }
     }

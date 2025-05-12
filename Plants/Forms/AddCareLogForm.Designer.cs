@@ -3,17 +3,17 @@
     partial class AddCareLogForm
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.ComboBox cmbAction;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.TextBox txtComment;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label lblAction;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lblComment;
+        private ComboBox cmbAction;
+        private DateTimePicker dateTimePicker;
+        private TextBox txtComment;
+        private Button btnSave;
+        private Label lblAction;
+        private Label lblDate;
+        private Label lblComment;
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            if (disposing && (components != null))
                 components.Dispose();
             base.Dispose(disposing);
         }
@@ -21,79 +21,80 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            cmbAction = new System.Windows.Forms.ComboBox();
-            dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            txtComment = new System.Windows.Forms.TextBox();
-            btnSave = new System.Windows.Forms.Button();
-            lblAction = new System.Windows.Forms.Label();
-            lblDate = new System.Windows.Forms.Label();
-            lblComment = new System.Windows.Forms.Label();
+            cmbAction = new ComboBox();
+            dateTimePicker = new DateTimePicker();
+            txtComment = new TextBox();
+            btnSave = new Button();
+            lblAction = new Label();
+            lblDate = new Label();
+            lblComment = new Label();
 
             SuspendLayout();
 
-            // cmbAction
-            cmbAction.FormattingEnabled = true;
-            cmbAction.Items.AddRange(new object[] { "Podlewanie", "Nawożenie", "Przycinanie", "Ochrona", "Przesadzanie", "Kontrola_chorób" });
-            cmbAction.Location = new System.Drawing.Point(120, 10);
-            cmbAction.Name = "cmbAction";
-            cmbAction.Size = new System.Drawing.Size(200, 23);
-            cmbAction.TabIndex = 0;
-
-            // lblAction
-            lblAction.AutoSize = true;
-            lblAction.Location = new System.Drawing.Point(10, 10);
-            lblAction.Name = "lblAction";
-            lblAction.Size = new System.Drawing.Size(100, 15);
-            lblAction.TabIndex = 1;
-            lblAction.Text = "Wybierz akcję:";
-
-            // dateTimePicker
-            dateTimePicker.Location = new System.Drawing.Point(120, 40);
-            dateTimePicker.Name = "dateTimePicker";
-            dateTimePicker.Size = new System.Drawing.Size(200, 23);
-            dateTimePicker.TabIndex = 2;
-
-            // lblDate
-            lblDate.AutoSize = true;
-            lblDate.Location = new System.Drawing.Point(10, 40);
-            lblDate.Name = "lblDate";
-            lblDate.Size = new System.Drawing.Size(60, 15);
-            lblDate.TabIndex = 3;
-            lblDate.Text = "Data opieki:";
-
-            // txtComment
-            txtComment.Location = new System.Drawing.Point(120, 70);
-            txtComment.Name = "txtComment";
-            txtComment.Size = new System.Drawing.Size(200, 23);
-            txtComment.TabIndex = 4;
-
-            // lblComment
-            lblComment.AutoSize = true;
-            lblComment.Location = new System.Drawing.Point(10, 70);
-            lblComment.Name = "lblComment";
-            lblComment.Size = new System.Drawing.Size(100, 15);
-            lblComment.TabIndex = 5;
-            lblComment.Text = "Komentarz:";
-
-            // btnSave
-            btnSave.Location = new System.Drawing.Point(120, 100);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new System.Drawing.Size(100, 30);
-            btnSave.TabIndex = 6;
-            btnSave.Text = "Zapisz";
-            btnSave.Click += btnSave_Click;
-
-            // AddCareLogForm
-            ClientSize = new System.Drawing.Size(350, 150);
-            Controls.Add(cmbAction);
-            Controls.Add(dateTimePicker);
-            Controls.Add(txtComment);
-            Controls.Add(btnSave);
-            Controls.Add(lblAction);
-            Controls.Add(lblDate);
-            Controls.Add(lblComment);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(360, 300);
+            MinimumSize = new System.Drawing.Size(360, 300);
+            FormBorderStyle = FormBorderStyle.Sizable;
+            StartPosition = FormStartPosition.CenterParent;
             Name = "AddCareLogForm";
             Text = "Dodaj log opieki";
+
+            int margin = 15;
+            int controlWidth = 360 - margin * 2;
+
+            lblAction.AutoSize = true;
+            lblAction.Location = new System.Drawing.Point(margin, margin);
+            lblAction.Name = "lblAction";
+            lblAction.Text = "Wybierz akcję:";
+
+            cmbAction.FormattingEnabled = true;
+            cmbAction.Items.AddRange(new object[] { "Podlewanie", "Nawożenie", "Przycinanie", "Ochrona", "Przesadzanie", "Kontrola_chorób" });
+            cmbAction.Location = new System.Drawing.Point(margin, 35);
+            cmbAction.Name = "cmbAction";
+            cmbAction.Size = new System.Drawing.Size(controlWidth, 23);
+            cmbAction.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+
+            lblDate.AutoSize = true;
+            lblDate.Location = new System.Drawing.Point(margin, 70);
+            lblDate.Name = "lblDate";
+            lblDate.Text = "Data opieki:";
+
+            dateTimePicker.Format = DateTimePickerFormat.Custom;
+            dateTimePicker.CustomFormat = "dddd, dd MMM yyyy";
+            dateTimePicker.Location = new System.Drawing.Point(margin, 90);
+            dateTimePicker.Name = "dateTimePicker";
+            dateTimePicker.Size = new System.Drawing.Size(controlWidth, 23);
+            dateTimePicker.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+
+            dateTimePicker.Enabled = true;
+
+            lblComment.AutoSize = true;
+            lblComment.Location = new System.Drawing.Point(margin, 125);
+            lblComment.Name = "lblComment";
+            lblComment.Text = "Komentarz:";
+
+            txtComment.Location = new System.Drawing.Point(margin, 145);
+            txtComment.Multiline = true;
+            txtComment.Name = "txtComment";
+            txtComment.Size = new System.Drawing.Size(controlWidth, 100);
+            txtComment.ScrollBars = ScrollBars.Vertical;
+            txtComment.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+
+            btnSave.Text = "Zapisz";
+            btnSave.Size = new System.Drawing.Size(80, 30);
+            btnSave.Location = new System.Drawing.Point(margin + controlWidth - btnSave.Width, margin + 300 - btnSave.Height - margin);
+            btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSave.Click += btnSave_Click;
+
+            Controls.Add(lblAction);
+            Controls.Add(cmbAction);
+            Controls.Add(lblDate);
+            Controls.Add(dateTimePicker);
+            Controls.Add(lblComment);
+            Controls.Add(txtComment);
+            Controls.Add(btnSave);
+
             ResumeLayout(false);
             PerformLayout();
         }

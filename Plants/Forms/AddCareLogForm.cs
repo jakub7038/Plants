@@ -7,8 +7,7 @@ namespace Plants.Forms
 {
     public partial class AddCareLogForm : Form
     {
-        // Add serialization attributes to the CreatedLog property
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] // Hide from designer serialization
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public CareLog? CreatedLog { get; private set; }
 
         private readonly Plant _selectedPlant;
@@ -21,10 +20,8 @@ namespace Plants.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Attempt to parse the selected action from the ComboBox
             if (Enum.TryParse(cmbAction.SelectedItem?.ToString(), out CareActionType action))
             {
-                // Create a new CareLog entry
                 CreatedLog = new CareLog(action, dateTimePicker.Value, _selectedPlant.Id, txtComment.Text);
                 DialogResult = DialogResult.OK;
                 Close();

@@ -1,24 +1,124 @@
-﻿using System;
+﻿#nullable enable
+
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using Plants.Models;
 
 namespace Plants.Forms
 {
-    public partial class CareLogListControl : UserControl
+    public partial class CareLogListControl : UserControl, IComparer
     {
+        private int sortColumn = -1;
+        private SortOrder sortOrder = SortOrder.None;
+
         public CareLogListControl()
         {
             InitializeComponent();
+
+            listViewLogs.ColumnClick += ListViewLogs_ColumnClick;
+            listViewLogs.OwnerDraw = true;
+            listViewLogs.DrawColumnHeader += ListViewLogs_DrawColumnHeader;
+            listViewLogs.DrawItem += (s, e) => e.DrawDefault = true;
+            listViewLogs.DrawSubItem += (s, e) => e.DrawDefault = true;
+
+            listViewLogs.Resize += (s, e) => AutoResizeLastColumn();
         }
 
-        public void LoadLogs(List<CareLog> careLogs)
+        private void ListViewLogs_DrawColumnHeader(object? sender, DrawListViewColumnHeaderEventArgs e)
         {
-            listBoxCareLogs.Items.Clear();
-            foreach (var log in careLogs)
+            e.DrawBackground();
+            var font = e.Font ?? SystemFonts.DefaultFont;
+            string headerText = e.Header?.Text ?? "----";
+
+            e.Graphics.DrawString(headerText, font, Brushes.Black, e.Bounds.X + 4, e.Bounds.Y + 4);
+
+            if (e.ColumnIndex == sortColumn)
             {
-                listBoxCareLogs.Items.Add($"{log.CareDate.ToShortDateString()} - {log.ActionDisplay}: {log.Comment}");
+                string arrow = sortOrder == SortOrder.Ascending ? "▲" : "▼";
+                var arrowFont = new Font("Arial", 8, FontStyle.Bold);
+                var arrowSize = e.Graphics.MeasureString(arrow, arrowFont);
+                e.Graphics.DrawString(arrow, arrowFont, Brushes.Black, e.Bounds.Right - arrowSize.Width - 4, e.Bounds.Y + 4);
             }
+
+            using var pen = new Pen(SystemColors.ControlDark);
+            e.Graphics.DrawLine(pen, e.Bounds.Left, e.Bounds.Bottom - 1, e.Bounds.Right, e.Bounds.Bottom - 1);
+        }
+
+        public void LoadLogs(List<CareLog> logs)
+        {
+            listViewLogs.Items.Clear();
+
+            foreach (var log in logs)
+            {
+                string dateText = log.CareDate.ToString("g");
+                string actionText = log.ActionDisplay ?? "----";
+                string commentText = string.IsNullOrWhiteSpace(log.Comment) ? "----" : log.Comment;
+
+                var item = new ListViewItem(dateText);
+                item.SubItems.Add(actionText);
+                item.SubItems.Add(commentText);
+                listViewLogs.Items.Add(item);
+            }
+
+            AutoResizeLastColumn();
+        }
+
+        private void ListViewLogs_ColumnClick(object? sender, ColumnClickEventArgs e)
+        {
+            if (e.Column == sortColumn)
+            {
+                sortOrder = sortOrder == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+            }
+            else
+            {
+                sortColumn = e.Column;
+                sortOrder = SortOrder.Ascending;
+            }
+
+            listViewLogs.ListViewItemSorter = this;
+            listViewLogs.Sort();
+
+            listViewLogs.Invalidate();
+        }
+
+        public int Compare(object? x, object? y)
+        {
+            if (sortColumn < 0) return 0;
+            if (x is not ListViewItem ix || y is not ListViewItem iy) return 0;
+
+            string a = ix.SubItems.Count > sortColumn ? ix.SubItems[sortColumn].Text : string.Empty;
+            string b = iy.SubItems.Count > sortColumn ? iy.SubItems[sortColumn].Text : string.Empty;
+
+            int result;
+            if (sortColumn == 0 &&
+                DateTime.TryParse(a, out var da) &&
+                DateTime.TryParse(b, out var db))
+            {
+                result = da.CompareTo(db);
+            }
+            else
+            {
+                result = string.Compare(a, b, StringComparison.CurrentCulture);
+            }
+
+            return sortOrder == SortOrder.Ascending ? result : -result;
+        }
+
+        private void AutoResizeLastColumn()
+        {
+            if (listViewLogs.Columns.Count == 0) return;
+
+            int totalWidth = listViewLogs.ClientSize.Width;
+            for (int i = 0; i < listViewLogs.Columns.Count - 1; i++)
+            {
+                totalWidth -= listViewLogs.Columns[i].Width;
+            }
+
+            if (totalWidth > 50)
+                listViewLogs.Columns[^1].Width = totalWidth;
         }
     }
 }
