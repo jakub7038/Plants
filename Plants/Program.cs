@@ -14,8 +14,6 @@ namespace Plants
         [STAThread]
         static void Main(string[] args)
         {
-            ApplicationConfiguration.Initialize();
-
             var host = Host.CreateDefaultBuilder()
                 .ConfigureServices((hostContext, services) =>
                 {
@@ -38,7 +36,8 @@ namespace Plants
                 return;
             }
 
-            Application.Run(new SpeciesForm());
+            ApplicationConfiguration.Initialize();
+            Application.Run(new PlantManagerForm());
         }
 
         private static void SeedDatabase(IHost host)
