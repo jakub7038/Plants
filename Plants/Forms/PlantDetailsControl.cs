@@ -22,9 +22,14 @@ namespace Plants.Forms
             lblLastWatering.Text = plant.LastWateringDate.HasValue ? $"Ostatnie podlewanie: {plant.LastWateringDate.Value:g}" : "Ostatnie podlewanie: brak danych";
             lblLastFertilizing.Text = plant.LastFertilizationDate.HasValue ? $"Ostatnie nawożenie: {plant.LastFertilizationDate.Value:g}" : "Ostatnie nawożenie: brak danych";
 
+            picPhoto.Image = null;
+            picPhoto.Visible = false;
+        }
+        public void LoadCareLogPhoto(CareLog? selectedLog)
+        {
             if (selectedLog != null && selectedLog.Photo != null && selectedLog.Photo.Length > 0)
             {
-                using var ms = new System.IO.MemoryStream(selectedLog.Photo);
+                using var ms = new MemoryStream(selectedLog.Photo);
                 picPhoto.Image = Image.FromStream(ms);
                 picPhoto.Visible = true;
             }

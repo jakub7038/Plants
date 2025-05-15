@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Plants.Models;
@@ -12,6 +13,9 @@ namespace Plants.Forms
     {
         private int sortColumn = -1;
         private SortOrder sortOrder = SortOrder.None;
+        private List<CareLog> _currentLogs = new();
+
+        public event Action<CareLog?>? CareLogSelected;
 
         [DllImport("user32.dll")]
         private static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
@@ -30,7 +34,7 @@ namespace Plants.Forms
             listViewLogs.DrawColumnHeader += ListViewLogs_DrawColumnHeader;
             listViewLogs.DrawItem += (s, e) => e.DrawDefault = true;
             listViewLogs.DrawSubItem += (s, e) => e.DrawDefault = true;
-
+            listViewLogs.SelectedIndexChanged += ListViewLogs_SelectedIndexChanged;
             listViewLogs.Resize += (s, e) => AutoResizeColumns();
         }
 
@@ -58,6 +62,7 @@ namespace Plants.Forms
 
         public void LoadLogs(List<CareLog> logs)
         {
+            _currentLogs = logs;
             listViewLogs.Items.Clear();
 
             foreach (var log in logs)
@@ -77,6 +82,21 @@ namespace Plants.Forms
             AutoResizeColumns();
         }
 
+        private void ListViewLogs_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+            if (listViewLogs.SelectedItems.Count > 0)
+            {
+                var index = listViewLogs.SelectedItems[0].Index;
+                if (index >= 0 && index < _currentLogs.Count)
+                {
+                    CareLogSelected?.Invoke(_currentLogs[index]);
+                    return;
+                }
+            }
+
+            CareLogSelected?.Invoke(null);
+        }
+
         private void ListViewLogs_ColumnClick(object? sender, ColumnClickEventArgs e)
         {
             if (e.Column == sortColumn)
@@ -91,24 +111,23 @@ namespace Plants.Forms
 
             listViewLogs.ListViewItemSorter = this;
             listViewLogs.Sort();
-
             ForceHeaderRedraw();
         }
 
         public int Compare(object? x, object? y)
         {
             if (sortColumn < 0) return 0;
-            if (x is not ListViewItem ix || y is not ListViewItem iy) return 0;
+            if (x is not ListViewItem itemX || y is not ListViewItem itemY) return 0;
 
-            string a = ix.SubItems.Count > sortColumn ? ix.SubItems[sortColumn].Text : string.Empty;
-            string b = iy.SubItems.Count > sortColumn ? iy.SubItems[sortColumn].Text : string.Empty;
+            string a = itemX.SubItems.Count > sortColumn ? itemX.SubItems[sortColumn].Text : string.Empty;
+            string b = itemY.SubItems.Count > sortColumn ? itemY.SubItems[sortColumn].Text : string.Empty;
 
             int result;
             if (sortColumn == 0 &&
-                DateTime.TryParse(a, out var da) &&
-                DateTime.TryParse(b, out var db))
+                DateTime.TryParse(a, out var dateA) &&
+                DateTime.TryParse(b, out var dateB))
             {
-                result = da.CompareTo(db);
+                result = dateA.CompareTo(dateB);
             }
             else
             {
@@ -123,8 +142,6 @@ namespace Plants.Forms
             if (listViewLogs.Columns.Count == 0) return;
 
             int totalWidth = listViewLogs.ClientSize.Width;
-            int numberOfColumns = listViewLogs.Columns.Count;
-
             int[] relativeWidths = { 12, 12, 24, 10, 10, 10, 10, 12 };
 
             int totalParts = 0;
@@ -132,18 +149,17 @@ namespace Plants.Forms
                 totalParts += part;
 
             int assignedWidth = 0;
-
-            for (int i = 0; i < numberOfColumns; i++)
+            for (int i = 0; i < relativeWidths.Length; i++)
             {
                 int width = (totalWidth * relativeWidths[i]) / totalParts;
                 listViewLogs.Columns[i].Width = width;
                 assignedWidth += width;
             }
 
-            int extraPixels = totalWidth - assignedWidth;
-            if (extraPixels > 0)
+            int extra = totalWidth - assignedWidth;
+            if (extra > 0)
             {
-                listViewLogs.Columns[^1].Width += extraPixels;
+                listViewLogs.Columns[^1].Width += extra;
             }
         }
 

@@ -25,6 +25,10 @@ namespace Plants.Forms
             MinimumSize = new System.Drawing.Size(1000, 700);
 
             listBoxPlants.SelectedIndexChanged += ListBoxPlants_SelectedIndexChanged;
+            careLogListControl.CareLogSelected += selectedLog =>
+            {
+                plantDetailsControl.LoadCareLogPhoto(selectedLog);
+            };
         }
 
         private void PopulatePlantList()
@@ -69,5 +73,6 @@ namespace Plants.Forms
                 }
             }
         }
+
     }
 }
