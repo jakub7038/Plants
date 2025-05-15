@@ -16,10 +16,6 @@ namespace Plants.Models
         public string Name { get; set; } = null!;
 
         [Required]
-        [StringLength(100)]
-        public string Region { get; set; } = null!;
-
-        [Required]
         public int SpeciesId { get; set; }
 
         [ForeignKey("SpeciesId")]
@@ -53,7 +49,6 @@ namespace Plants.Models
         public Plant(string name, string region, Species species)
         {
             Name = name;
-            Region = region;
             Species = species;
             SpeciesId = species.Id;
         }

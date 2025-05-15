@@ -41,7 +41,6 @@ namespace Plants.Data
                         .Select(i => new Plant
                         {
                             Name = $"{s.Name} #{i}",
-                            Region = s.Region,
                             SpeciesId = s.Id
                         }))
                     .ToList();

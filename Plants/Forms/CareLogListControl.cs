@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Plants.Models;
 
@@ -13,6 +14,14 @@ namespace Plants.Forms
     {
         private int sortColumn = -1;
         private SortOrder sortOrder = SortOrder.None;
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("user32.dll")]
+        private static extern bool InvalidateRect(IntPtr hWnd, IntPtr lpRect, bool bErase);
+
+        private const int LVM_GETHEADER = 0x1000 + 31;
 
         public CareLogListControl()
         {
@@ -40,7 +49,9 @@ namespace Plants.Forms
                 string arrow = sortOrder == SortOrder.Ascending ? "▲" : "▼";
                 var arrowFont = new Font("Arial", 8, FontStyle.Bold);
                 var arrowSize = e.Graphics.MeasureString(arrow, arrowFont);
-                e.Graphics.DrawString(arrow, arrowFont, Brushes.Black, e.Bounds.Right - arrowSize.Width - 4, e.Bounds.Y + 4);
+
+                e.Graphics.DrawString(arrow, arrowFont, Brushes.Black,
+                    e.Bounds.Right - arrowSize.Width - 4, e.Bounds.Y + (e.Bounds.Height - arrowSize.Height) / 2);
             }
 
             using var pen = new Pen(SystemColors.ControlDark);
@@ -53,13 +64,16 @@ namespace Plants.Forms
 
             foreach (var log in logs)
             {
-                string dateText = log.CareDate.ToString("g");
-                string actionText = log.ActionDisplay ?? "----";
-                string commentText = string.IsNullOrWhiteSpace(log.Comment) ? "----" : log.Comment;
+                var item = new ListViewItem(log.CareDate.ToString("g"));
+                item.SubItems.Add(log.ActionDisplay ?? "----");
+                item.SubItems.Add(string.IsNullOrWhiteSpace(log.Comment) ? "----" : log.Comment);
+                item.SubItems.Add(log.TemperatureAtCare?.ToString("F1") ?? "----");
+                item.SubItems.Add(log.HumidityAtCare?.ToString("F0") ?? "----");
+                item.SubItems.Add(log.GrowthMeasurementCm?.ToString("F1") ?? "----");
+                item.SubItems.Add(log.HealthStatus.ToString());
+                item.SubItems.Add(string.IsNullOrWhiteSpace(log.ObservedProblems) ? "----" : log.ObservedProblems);
+                item.SubItems.Add(log.Photo != null ? "Yes" : "No");
 
-                var item = new ListViewItem(dateText);
-                item.SubItems.Add(actionText);
-                item.SubItems.Add(commentText);
                 listViewLogs.Items.Add(item);
             }
 
@@ -81,7 +95,7 @@ namespace Plants.Forms
             listViewLogs.ListViewItemSorter = this;
             listViewLogs.Sort();
 
-            listViewLogs.Invalidate();
+            ForceHeaderRedraw();
         }
 
         public int Compare(object? x, object? y)
@@ -119,6 +133,15 @@ namespace Plants.Forms
 
             if (totalWidth > 50)
                 listViewLogs.Columns[^1].Width = totalWidth;
+        }
+
+        private void ForceHeaderRedraw()
+        {
+            IntPtr header = SendMessage(listViewLogs.Handle, LVM_GETHEADER, IntPtr.Zero, IntPtr.Zero);
+            if (header != IntPtr.Zero)
+            {
+                InvalidateRect(header, IntPtr.Zero, true);
+            }
         }
     }
 }

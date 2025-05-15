@@ -1,5 +1,4 @@
-﻿// PlantManagerForm.Designer.cs
-namespace Plants.Forms
+﻿namespace Plants.Forms
 {
     partial class PlantManagerForm
     {
@@ -46,36 +45,36 @@ namespace Plants.Forms
             splitContainer.Panel2.Padding = new Padding(8);
             splitContainer.Panel2MinSize = 400;
             splitContainer.Size = new Size(800, 600);
-            splitContainer.SplitterDistance = 180; // Narrower list area
+            splitContainer.SplitterDistance = 180;
             splitContainer.TabIndex = 0;
 
             btnAddCareLog.Dock = DockStyle.Bottom;
             btnAddCareLog.Font = new Font("Segoe UI", 9F);
             btnAddCareLog.Location = new Point(8, 556);
             btnAddCareLog.Name = "btnAddCareLog";
-            btnAddCareLog.Size = new Size(164, 36); // Narrower button
+            btnAddCareLog.Size = new Size(164, 36);
             btnAddCareLog.TabIndex = 0;
-            btnAddCareLog.Text = "Add Care Log";
+            btnAddCareLog.Text = "Dodaj wpis opieki";
             btnAddCareLog.Click += btnAddCareLog_Click;
 
             listBoxPlants.Dock = DockStyle.Fill;
             listBoxPlants.Font = new Font("Segoe UI", 10F);
             listBoxPlants.Location = new Point(8, 8);
             listBoxPlants.Name = "listBoxPlants";
-            listBoxPlants.Size = new Size(164, 584); // Narrower list
+            listBoxPlants.Size = new Size(164, 584);
             listBoxPlants.TabIndex = 1;
             listBoxPlants.SelectedIndexChanged += listBoxPlants_SelectedIndexChanged;
 
             careLogListControl.Dock = DockStyle.Fill;
             careLogListControl.Location = new Point(8, 168);
             careLogListControl.Name = "careLogListControl";
-            careLogListControl.Size = new Size(588, 424); // Wider details
+            careLogListControl.Size = new Size(588, 424);
             careLogListControl.TabIndex = 0;
 
             plantDetailsControl.Dock = DockStyle.Top;
             plantDetailsControl.Location = new Point(8, 8);
             plantDetailsControl.Name = "plantDetailsControl";
-            plantDetailsControl.Size = new Size(588, 160); // Wider details
+            plantDetailsControl.Size = new Size(588, 160);
             plantDetailsControl.TabIndex = 1;
 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -84,7 +83,7 @@ namespace Plants.Forms
             Controls.Add(splitContainer);
             MinimumSize = new Size(600, 400);
             Name = "PlantManagerForm";
-            Text = "Plant Manager";
+            Text = "Menedżer Roślin";
             splitContainer.Panel1.ResumeLayout(false);
             splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer).EndInit();

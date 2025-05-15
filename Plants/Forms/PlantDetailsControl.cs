@@ -11,15 +11,28 @@ namespace Plants.Forms
             InitializeComponent();
         }
 
-        public void LoadPlant(Plant plant)
+        public void LoadPlant(Plant plant, CareLog? selectedLog = null)
         {
-            lblName.Text = plant.Name;
-            lblRegion.Text = plant.Region;
-            lblSpecies.Text = plant.Species.Name;
-            lblTemp.Text = $"Ideal Temp: {plant.Species.IdealTemperature} °C";
-            lblHumidity.Text = plant.Species.Humidity.HasValue
-                ? $"Humidity: {plant.Species.Humidity}%"
-                : "Humidity: N/A";
+            lblName.Text = $"Nazwa: {plant.Name}";
+            lblRegion.Text = $"Region: {plant.Species.Region}";
+            lblSpecies.Text = $"Gatunek: {plant.Species.Name}";
+            lblTemp.Text = $"Idealna temp.: {plant.Species.IdealTemperature} °C";
+            lblHumidity.Text = plant.Species.Humidity.HasValue ? $"Wilgotność: {plant.Species.Humidity}%" : "Wilgotność: brak danych";
+
+            lblLastWatering.Text = plant.LastWateringDate.HasValue ? $"Ostatnie podlewanie: {plant.LastWateringDate.Value:g}" : "Ostatnie podlewanie: brak danych";
+            lblLastFertilizing.Text = plant.LastFertilizationDate.HasValue ? $"Ostatnie nawożenie: {plant.LastFertilizationDate.Value:g}" : "Ostatnie nawożenie: brak danych";
+
+            if (selectedLog != null && selectedLog.Photo != null && selectedLog.Photo.Length > 0)
+            {
+                using var ms = new System.IO.MemoryStream(selectedLog.Photo);
+                picPhoto.Image = Image.FromStream(ms);
+                picPhoto.Visible = true;
+            }
+            else
+            {
+                picPhoto.Image = null;
+                picPhoto.Visible = false;
+            }
         }
     }
 }

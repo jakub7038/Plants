@@ -26,9 +26,29 @@ namespace Plants.Forms
             var plant1 = new Plant("Benek", "Living Room", species1);
             var plant2 = new Plant("Ziggy", "Balcony", species2);
 
-            plant1.CareLogs.Add(new CareLog(CareActionType.Podlewanie, DateTime.Now.AddDays(-2), plant1.Id, "Filter water used"));
-            plant2.CareLogs.Add(new CareLog(CareActionType.Nawożenie, DateTime.Now.AddDays(-10), plant2.Id, "Regular fertilizer"));
+            plant1.CareLogs.Add(new CareLog(
+                action: CareActionType.Podlewanie,
+                careDate: DateTime.Now.AddDays(-2),
+                plantId: plant1.Id,
+                comment: "Użyto filtrowanej wody",
+                temperatureAtCare: 22,
+                humidityAtCare: 55,
+                growthMeasurementCm: 120,
+                observedProblems: null,
+                healthStatus: PlantHealthStatus.Doskonała
+            ));
 
+            plant2.CareLogs.Add(new CareLog(
+                action: CareActionType.Nawożenie,
+                careDate: DateTime.Now.AddDays(-10),
+                plantId: plant2.Id,
+                comment: "Zastosowano nawóz uniwersalny",
+                temperatureAtCare: 28,
+                humidityAtCare: 25,
+                growthMeasurementCm: 45,
+                observedProblems: "Liście lekko suche",
+                healthStatus: PlantHealthStatus.Dobra
+            ));
             _plants.AddRange(new[] { plant1, plant2 });
         }
 
