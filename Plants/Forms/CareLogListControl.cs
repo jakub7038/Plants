@@ -1,6 +1,4 @@
-﻿#nullable enable
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -33,7 +31,7 @@ namespace Plants.Forms
             listViewLogs.DrawItem += (s, e) => e.DrawDefault = true;
             listViewLogs.DrawSubItem += (s, e) => e.DrawDefault = true;
 
-            listViewLogs.Resize += (s, e) => AutoResizeLastColumn();
+            listViewLogs.Resize += (s, e) => AutoResizeColumns();
         }
 
         private void ListViewLogs_DrawColumnHeader(object? sender, DrawListViewColumnHeaderEventArgs e)
@@ -67,17 +65,16 @@ namespace Plants.Forms
                 var item = new ListViewItem(log.CareDate.ToString("g"));
                 item.SubItems.Add(log.ActionDisplay ?? "----");
                 item.SubItems.Add(string.IsNullOrWhiteSpace(log.Comment) ? "----" : log.Comment);
-                item.SubItems.Add(log.TemperatureAtCare.ToString("F1") ?? "----");
-                item.SubItems.Add(log.HumidityAtCare.ToString("F0") ?? "----");
-                item.SubItems.Add(log.GrowthMeasurementCm.ToString("F1") ?? "----");
+                item.SubItems.Add(log.TemperatureAtCare.ToString("F1"));
+                item.SubItems.Add(log.HumidityAtCare.ToString("F0"));
+                item.SubItems.Add(log.GrowthMeasurementCm.ToString("F1"));
                 item.SubItems.Add(log.HealthStatus.ToString());
                 item.SubItems.Add(string.IsNullOrWhiteSpace(log.ObservedProblems) ? "----" : log.ObservedProblems);
-                item.SubItems.Add(log.Photo != null ? "Yes" : "No");
 
                 listViewLogs.Items.Add(item);
             }
 
-            AutoResizeLastColumn();
+            AutoResizeColumns();
         }
 
         private void ListViewLogs_ColumnClick(object? sender, ColumnClickEventArgs e)
@@ -121,18 +118,33 @@ namespace Plants.Forms
             return sortOrder == SortOrder.Ascending ? result : -result;
         }
 
-        private void AutoResizeLastColumn()
+        private void AutoResizeColumns()
         {
             if (listViewLogs.Columns.Count == 0) return;
 
             int totalWidth = listViewLogs.ClientSize.Width;
-            for (int i = 0; i < listViewLogs.Columns.Count - 1; i++)
+            int numberOfColumns = listViewLogs.Columns.Count;
+
+            int[] relativeWidths = { 12, 12, 24, 10, 10, 10, 10, 12 };
+
+            int totalParts = 0;
+            foreach (var part in relativeWidths)
+                totalParts += part;
+
+            int assignedWidth = 0;
+
+            for (int i = 0; i < numberOfColumns; i++)
             {
-                totalWidth -= listViewLogs.Columns[i].Width;
+                int width = (totalWidth * relativeWidths[i]) / totalParts;
+                listViewLogs.Columns[i].Width = width;
+                assignedWidth += width;
             }
 
-            if (totalWidth > 50)
-                listViewLogs.Columns[^1].Width = totalWidth;
+            int extraPixels = totalWidth - assignedWidth;
+            if (extraPixels > 0)
+            {
+                listViewLogs.Columns[^1].Width += extraPixels;
+            }
         }
 
         private void ForceHeaderRedraw()

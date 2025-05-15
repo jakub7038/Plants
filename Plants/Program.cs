@@ -29,7 +29,7 @@ namespace Plants
                     );
                 })
                 .Build();
-
+            
             if (args.Length > 0 && args[0] == "--seed") // argument --seed do seedowanie
             {
                 SeedDatabase(host);
@@ -48,12 +48,12 @@ namespace Plants
             try
             {
                 var context = services.GetRequiredService<AppDbContext>();
-                DataSeeder.SeedInitialData(context);
+                DatabaseSeeder.Seed(context);
                 Console.WriteLine("Dane zosta³y za³adowane!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"B³¹d: {ex.Message}");
+                Console.WriteLine($"B³¹d podczas seedowania bazy danych: {ex.Message}");
             }
         }
 

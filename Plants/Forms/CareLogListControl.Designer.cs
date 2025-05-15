@@ -14,7 +14,6 @@ namespace Plants.Forms
         private ColumnHeader colGrowth = null!;
         private ColumnHeader colHealth = null!;
         private ColumnHeader colProblems = null!;
-        private ColumnHeader colPhoto = null!;
 
         protected override void Dispose(bool disposing)
         {
@@ -35,7 +34,6 @@ namespace Plants.Forms
             colGrowth = new ColumnHeader();
             colHealth = new ColumnHeader();
             colProblems = new ColumnHeader();
-            colPhoto = new ColumnHeader();
 
             SuspendLayout();
 
@@ -51,31 +49,13 @@ namespace Plants.Forms
             listViewLogs.HeaderStyle = ColumnHeaderStyle.Clickable;
 
             colDate.Text = "Data";
-            colDate.Width = 120;
-
             colAction.Text = "Akcja";
-            colAction.Width = 100;
-
             colComment.Text = "Komentarz";
-            colComment.Width = 200;
-
             colTemperature.Text = "Temperatura (°C)";
-            colTemperature.Width = 120;
-
             colHumidity.Text = "Wilgotność (%)";
-            colHumidity.Width = 100;
-
             colGrowth.Text = "Wzrost (cm)";
-            colGrowth.Width = 100;
-
             colHealth.Text = "Stan zdrowia";
-            colHealth.Width = 100;
-
             colProblems.Text = "Zauważone problemy";
-            colProblems.Width = 150;
-
-            colPhoto.Text = "Zdjęcie?";
-            colPhoto.Width = 70;
 
             Controls.Add(listViewLogs);
             Name = "CareLogListControl";

@@ -15,6 +15,10 @@ namespace Plants.Forms
             InitializeComponent();
             _plantService.LoadStaticData();
             PopulatePlantList();
+
+            Width = 1250;
+            Height = 800;
+            MinimumSize = new System.Drawing.Size(1000, 700);
         }
 
         private void PopulatePlantList()
@@ -37,7 +41,7 @@ namespace Plants.Forms
         {
             if (listBoxPlants.SelectedItem is not Plant selected)
             {
-                MessageBox.Show("Najpierw wybierz roslinę.");
+                MessageBox.Show("Najpierw wybierz roślinę.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
