@@ -2,21 +2,18 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Plants.Data;
 
 #nullable disable
 
-namespace Plants.Data.Migrations
+namespace Plants.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250503191717_InitialCreate")]
-    partial class InitialCreate
+    partial class AppDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,8 +41,28 @@ namespace Plants.Data.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("text");
 
+                    b.Property<double>("GrowthMeasurementCm")
+                        .HasColumnType("double precision");
+
+                    b.Property<int>("HealthStatus")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("HumidityAtCare")
+                        .HasColumnType("double precision");
+
+                    b.Property<string>("ObservedProblems")
+                        .HasMaxLength(300)
+                        .HasColumnType("character varying(300)");
+
+                    b.Property<byte[]>("Photo")
+                        .HasMaxLength(1048576)
+                        .HasColumnType("bytea");
+
                     b.Property<int>("PlantId")
                         .HasColumnType("integer");
+
+                    b.Property<double>("TemperatureAtCare")
+                        .HasColumnType("double precision");
 
                     b.HasKey("Id");
 
@@ -63,11 +80,6 @@ namespace Plants.Data.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<string>("Region")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");

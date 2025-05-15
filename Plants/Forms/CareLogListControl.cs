@@ -67,9 +67,9 @@ namespace Plants.Forms
                 var item = new ListViewItem(log.CareDate.ToString("g"));
                 item.SubItems.Add(log.ActionDisplay ?? "----");
                 item.SubItems.Add(string.IsNullOrWhiteSpace(log.Comment) ? "----" : log.Comment);
-                item.SubItems.Add(log.TemperatureAtCare?.ToString("F1") ?? "----");
-                item.SubItems.Add(log.HumidityAtCare?.ToString("F0") ?? "----");
-                item.SubItems.Add(log.GrowthMeasurementCm?.ToString("F1") ?? "----");
+                item.SubItems.Add(log.TemperatureAtCare.ToString("F1") ?? "----");
+                item.SubItems.Add(log.HumidityAtCare.ToString("F0") ?? "----");
+                item.SubItems.Add(log.GrowthMeasurementCm.ToString("F1") ?? "----");
                 item.SubItems.Add(log.HealthStatus.ToString());
                 item.SubItems.Add(string.IsNullOrWhiteSpace(log.ObservedProblems) ? "----" : log.ObservedProblems);
                 item.SubItems.Add(log.Photo != null ? "Yes" : "No");

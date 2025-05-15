@@ -46,7 +46,7 @@ namespace Plants.Models
 
         public Plant() { }
 
-        public Plant(string name, string region, Species species)
+        public Plant(string name, Species species)
         {
             Name = name;
             Species = species;

@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Plants.Data.Migrations
+namespace Plants.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -35,7 +35,6 @@ namespace Plants.Data.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    Region = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     SpeciesId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
@@ -57,8 +56,14 @@ namespace Plants.Data.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Action = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     CareDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    PlantId = table.Column<int>(type: "integer", nullable: false),
                     Comment = table.Column<string>(type: "text", nullable: true),
-                    PlantId = table.Column<int>(type: "integer", nullable: false)
+                    TemperatureAtCare = table.Column<double>(type: "double precision", nullable: false),
+                    HumidityAtCare = table.Column<double>(type: "double precision", nullable: false),
+                    Photo = table.Column<byte[]>(type: "bytea", maxLength: 1048576, nullable: true),
+                    GrowthMeasurementCm = table.Column<double>(type: "double precision", nullable: false),
+                    ObservedProblems = table.Column<string>(type: "character varying(300)", maxLength: 300, nullable: true),
+                    HealthStatus = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -44,18 +44,20 @@ namespace Plants.Models
 
         public string? Comment { get; set; }
 
+        [Required]
         [Range(-50, 100)]
-        public double? TemperatureAtCare { get; set; }
+        public double TemperatureAtCare { get; set; }
 
+        [Required]
         [Range(0, 100)]
-        public double? HumidityAtCare { get; set; }
+        public double HumidityAtCare { get; set; }
 
         [MaxLength(1_048_576)] // 1 MB
         public byte[]? Photo { get; set; }
 
-
+        [Required]
         [Range(0, 500)]
-        public double? GrowthMeasurementCm { get; set; }
+        public double GrowthMeasurementCm { get; set; }
 
         [StringLength(300)]
         public string? ObservedProblems { get; set; }
@@ -71,9 +73,9 @@ namespace Plants.Models
             int plantId,
             PlantHealthStatus healthStatus = PlantHealthStatus.Doskonała,
             string? comment = null,
-            double? temperatureAtCare = null,
-            double? humidityAtCare = null,
-            double? growthMeasurementCm = null,
+            double temperatureAtCare = 20,
+            double humidityAtCare = 50,
+            double growthMeasurementCm = 30,
             string? observedProblems = null,
             byte[]? photo = null)
         {
@@ -93,7 +95,7 @@ namespace Plants.Models
             }
             else if (photo != null)
             {
-                throw new ArgumentException("Photo size must be less than or equal to 1MB.");
+                throw new ArgumentException("Zdjęcie musi być mniejsze niż 1MB.");
             }
         }
     }

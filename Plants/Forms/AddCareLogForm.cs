@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using Plants.Models;
 using System.ComponentModel;
+using Plants.Models;
+using Plants.Helper;
 
 namespace Plants.Forms
 {
@@ -20,18 +21,19 @@ namespace Plants.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Enum.TryParse(cmbAction.SelectedItem?.ToString(), out CareActionType action) && Enum.TryParse(cmbHealthStatus.SelectedItem?.ToString(), out PlantHealthStatus healthStatus))
+            if (ValidateInputs(out var action, out var healthStatus))
             {
                 CreatedLog = new CareLog(
                     action: action,
                     careDate: dateTimePicker.Value,
                     plantId: _selectedPlant.Id,
                     comment: txtComment.Text,
-                    temperatureAtCare: (double?)numTemp.Value,
-                    humidityAtCare: (double?)numHumidity.Value,
-                    growthMeasurementCm: (double?)numGrowth.Value,
+                    temperatureAtCare: (double)numTemp.Value,
+                    humidityAtCare: (double)numHumidity.Value,
+                    growthMeasurementCm: (double)numGrowth.Value,
                     observedProblems: txtProblems.Text,
-                    healthStatus: healthStatus
+                    healthStatus: healthStatus,
+                    photo: _photoData
                 );
 
                 DialogResult = DialogResult.OK;
@@ -43,6 +45,17 @@ namespace Plants.Forms
             }
         }
 
+        private bool ValidateInputs(out CareActionType action, out PlantHealthStatus healthStatus)
+        {
+            action = default;
+            healthStatus = default;
+
+            if (!Enum.TryParse(cmbAction.SelectedItem?.ToString(), out action)) return false;
+            if (!Enum.TryParse(cmbHealthStatus.SelectedItem?.ToString(), out healthStatus)) return false;
+
+            return true;
+        }
+
         private void BtnSelectPhoto_Click(object? sender, EventArgs e)
         {
             openFileDialog.Title = "Wybierz zdjęcie rośliny";
@@ -50,14 +63,15 @@ namespace Plants.Forms
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                var fileBytes = System.IO.File.ReadAllBytes(openFileDialog.FileName);
-                if (fileBytes.Length > 1_048_576)
+                try
                 {
-                    MessageBox.Show("Plik jest za duży (max 1 MB).", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    _photoData = FileHelper.LoadPhoto(openFileDialog.FileName);
+                    lblSelectedPhoto.Text = System.IO.Path.GetFileName(openFileDialog.FileName);
                 }
-                _photoData = fileBytes;
-                lblSelectedPhoto.Text = System.IO.Path.GetFileName(openFileDialog.FileName);
+                catch (InvalidOperationException ex)
+                {
+                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
