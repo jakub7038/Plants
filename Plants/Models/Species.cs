@@ -17,21 +17,23 @@ namespace Plants.Models
         public string Region { get; set; } = null!;
 
         [Required]
-        [Range(0, 50)]
-        public double IdealTemperature { get; set; }
+        [StringLength(50)]
+        public string IdealTemperature { get; set; } = null!;
 
-        public double? Humidity { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string IdealHumidity { get; set; } = null!;
 
         public ICollection<Plant> Plants { get; set; } = new List<Plant>();
 
         public Species() { }
 
-        public Species(string name, string region, double idealTemperature, double? humidity = null)
+        public Species(string name, string region, string idealTemperature, string idealHumidity)
         {
             Name = name;
             Region = region;
             IdealTemperature = idealTemperature;
-            Humidity = humidity;
+            IdealHumidity = idealHumidity;
         }
     }
 }

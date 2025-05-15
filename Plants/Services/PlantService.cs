@@ -10,8 +10,8 @@ namespace Plants.Services
 
         public void LoadStaticData()
         {
-            var species1 = new Species("Ficus", "Tropics", 22.5, 60);
-            var species2 = new Species("Cactus", "Desert", 28, 20);
+            var species1 = new Species("Ficus", "Tropics", "[22, 60]","[20]");
+            var species2 = new Species("Cactus", "Desert", "[28, 20]","[20]");
 
             var plant1 = new Plant("Benek", species1);
             var plant2 = new Plant("Ziggy", species2);

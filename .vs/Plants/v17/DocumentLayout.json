@@ -3,52 +3,123 @@
   "WorkspaceRootPath": "C:\\Users\\Jakub\\source\\repos\\Plants\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\careloglistcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\careloglistcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\careloglistcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\careloglistcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|C:\\Users\\Jakub\\source\\repos\\Plants\\plants\\forms\\careloglistcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\careloglistcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantmanagerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\plantmanagerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\plantmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\data\\helper\\dbcontexthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\data\\helper\\dbcontexthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantdetailscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\plantdetailscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\plantmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\data\\helpers\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\data\\helpers\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\data\\helpers\\dbcontexthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\data\\helpers\\dbcontexthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\data\\helpers\\databaseseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\data\\helpers\\databaseseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\data\\helpers\\databasecleaner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\data\\helpers\\databasecleaner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\addcarelogform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\addcarelogform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\services\\plantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\services\\plantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\data\\databaseseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\data\\databaseseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515210235_init_fixes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Plants\\Migrations\\20250515210235_init_fixes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515210147_init_fixes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Plants\\Migrations\\20250515210147_init_fixes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\speciesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\speciesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\models\\species.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\models\\species.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\models\\carelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\models\\carelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\models\\plant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\models\\plant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantdetailscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\plantdetailscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\addcarelogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\addcarelogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515200504_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Plants\\Migrations\\20250515200504_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\careloglistcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\careloglistcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515192504_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Plants\\Migrations\\20250515192504_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\plantmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\careloglistcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\careloglistcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|C:\\Users\\Jakub\\source\\repos\\Plants\\plants\\forms\\careloglistcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\careloglistcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515185800_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Plants\\Migrations\\20250515185800_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515185505_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Plants\\Migrations\\20250515185505_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantdetailscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\plantdetailscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantdetailscontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\plantdetailscontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantmanagerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\plantmanagerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\plantmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantmanagerform.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
@@ -63,44 +134,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Plants\\Migrations\\20250515175527_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\services\\plantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\services\\plantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\models\\plant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\models\\plant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\models\\carelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\models\\carelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\models\\species.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\models\\species.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantdetailscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\plantdetailscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|C:\\Users\\Jakub\\source\\repos\\Plants\\plants\\forms\\addcarelogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\addcarelogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\data\\helper\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\data\\helper\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\addcarelogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\addcarelogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\addcarelogform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\addcarelogform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\plantdetailscontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|solutionrelative:plants\\forms\\plantdetailscontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{23D4DC1E-356B-4453-B54C-58FE56710606}|Plants\\Plants.csproj|c:\\users\\jakub\\source\\repos\\plants\\plants\\forms\\addcarelogform.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
@@ -118,24 +153,167 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
+              "Title": "20250515210235_init_fixes.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515210235_init_fixes.cs",
+              "RelativeDocumentMoniker": "Plants\\Migrations\\20250515210235_init_fixes.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515210235_init_fixes.cs",
+              "RelativeToolTip": "Plants\\Migrations\\20250515210235_init_fixes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T21:02:36.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20250515210147_init_fixes.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515210147_init_fixes.cs",
+              "RelativeDocumentMoniker": "Plants\\Migrations\\20250515210147_init_fixes.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515210147_init_fixes.cs",
+              "RelativeToolTip": "Plants\\Migrations\\20250515210147_init_fixes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T21:01:47.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SpeciesForm.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\SpeciesForm.cs",
+              "RelativeDocumentMoniker": "Plants\\Forms\\SpeciesForm.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\SpeciesForm.cs",
+              "RelativeToolTip": "Plants\\Forms\\SpeciesForm.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwDwAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T20:58:10.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DatabaseCleaner.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\Helpers\\DatabaseCleaner.cs",
+              "RelativeDocumentMoniker": "Plants\\Data\\Helpers\\DatabaseCleaner.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\Helpers\\DatabaseCleaner.cs",
+              "RelativeToolTip": "Plants\\Data\\Helpers\\DatabaseCleaner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T20:33:47.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAAETAAAAAAAAAAAYwBUTAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-05-15T20:12:48.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "20250515200504_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515200504_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Plants\\Migrations\\20250515200504_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515200504_InitialCreate.cs",
+              "RelativeToolTip": "Plants\\Migrations\\20250515200504_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T20:05:05.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DBContextHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\Helpers\\DBContextHelper.cs",
+              "RelativeDocumentMoniker": "Plants\\Data\\Helpers\\DBContextHelper.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\Helpers\\DBContextHelper.cs",
+              "RelativeToolTip": "Plants\\Data\\Helpers\\DBContextHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T19:50:34.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Plants\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Plants\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T19:50:22.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20250515192504_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515192504_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Plants\\Migrations\\20250515192504_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515192504_InitialCreate.cs",
+              "RelativeToolTip": "Plants\\Migrations\\20250515192504_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T19:25:04.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20250515185800_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515185800_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Plants\\Migrations\\20250515185800_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515185800_InitialCreate.cs",
+              "RelativeToolTip": "Plants\\Migrations\\20250515185800_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T18:58:00.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "20250515185505_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515185505_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Plants\\Migrations\\20250515185505_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515185505_InitialCreate.cs",
+              "RelativeToolTip": "Plants\\Migrations\\20250515185505_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T18:55:05.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Program.cs",
               "RelativeDocumentMoniker": "Plants\\Program.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Program.cs",
               "RelativeToolTip": "Plants\\Program.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwCoAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAA6wFcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T17:59:14.778Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 31,
               "Title": "SpeciesForm.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\SpeciesForm.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\SpeciesForm.cs",
@@ -147,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 32,
               "Title": "20250515175527_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Migrations\\20250515175527_InitialCreate.cs",
               "RelativeDocumentMoniker": "Plants\\Migrations\\20250515175527_InitialCreate.cs",
@@ -160,72 +338,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Plants\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Plants\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAgwCoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T17:53:01.885Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\appsettings.json",
               "RelativeDocumentMoniker": "Plants\\appsettings.json",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\appsettings.json",
               "RelativeToolTip": "Plants\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-05-15T17:44:51.451Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DBContextHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\Helper\\DBContextHelper.cs",
-              "RelativeDocumentMoniker": "Plants\\Data\\Helper\\DBContextHelper.cs",
-              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\Helper\\DBContextHelper.cs",
-              "RelativeToolTip": "Plants\\Data\\Helper\\DBContextHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T17:52:28.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 2,
               "Title": "FileHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\Helper\\FileHelper.cs",
-              "RelativeDocumentMoniker": "Plants\\Data\\Helper\\FileHelper.cs",
-              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\Helper\\FileHelper.cs",
-              "RelativeToolTip": "Plants\\Data\\Helper\\FileHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\Helpers\\FileHelper.cs",
+              "RelativeDocumentMoniker": "Plants\\Data\\Helpers\\FileHelper.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\Helpers\\FileHelper.cs",
+              "RelativeToolTip": "Plants\\Data\\Helpers\\FileHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T17:28:40.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 8,
               "Title": "PlantService.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Services\\PlantService.cs",
               "RelativeDocumentMoniker": "Plants\\Services\\PlantService.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Services\\PlantService.cs",
               "RelativeToolTip": "Plants\\Services\\PlantService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowBUAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBoAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T17:27:33.539Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 30,
               "Title": "PlantManagerForm.resx",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\PlantManagerForm.resx",
               "RelativeDocumentMoniker": "Plants\\Forms\\PlantManagerForm.resx",
@@ -237,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 35,
               "Title": "CareLogListControl.resx",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\CareLogListControl.resx",
               "RelativeDocumentMoniker": "Plants\\Forms\\CareLogListControl.resx",
@@ -249,20 +401,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DataBaseSeeder.cs",
-              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\DataBaseSeeder.cs",
-              "RelativeDocumentMoniker": "Plants\\Data\\DataBaseSeeder.cs",
-              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\DataBaseSeeder.cs",
-              "RelativeToolTip": "Plants\\Data\\DataBaseSeeder.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAIwEoAAABaAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "DatabaseSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\Helpers\\DatabaseSeeder.cs",
+              "RelativeDocumentMoniker": "Plants\\Data\\Helpers\\DatabaseSeeder.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Data\\Helpers\\DatabaseSeeder.cs",
+              "RelativeToolTip": "Plants\\Data\\Helpers\\DatabaseSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T15:57:11.128Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 34,
               "Title": "AddCareLogForm.resx",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\AddCareLogForm.resx",
               "RelativeDocumentMoniker": "Plants\\Forms\\AddCareLogForm.resx",
@@ -274,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 28,
               "Title": "PlantManagerForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\PlantManagerForm.Designer.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\PlantManagerForm.Designer.cs",
@@ -287,20 +439,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "PlantDetailsControl.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\PlantDetailsControl.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\PlantDetailsControl.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\PlantDetailsControl.cs",
               "RelativeToolTip": "Plants\\Forms\\PlantDetailsControl.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCAAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAowBMAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T14:39:51.531Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 26,
               "Title": "PlantDetailsControl.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\PlantDetailsControl.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\PlantDetailsControl.cs",
@@ -312,59 +464,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 22,
               "Title": "CareLogListControl.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\CareLogListControl.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\CareLogListControl.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\CareLogListControl.cs",
               "RelativeToolTip": "Plants\\Forms\\CareLogListControl.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAuwI0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAkwJ8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T14:39:38.093Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 7,
               "Title": "AddCareLogForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\AddCareLogForm.Designer.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\AddCareLogForm.Designer.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\AddCareLogForm.Designer.cs",
               "RelativeToolTip": "Plants\\Forms\\AddCareLogForm.Designer.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAgwJoAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH4AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T14:39:14.199Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 17,
               "Title": "AddCareLogForm.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\AddCareLogForm.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\AddCareLogForm.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\AddCareLogForm.cs",
               "RelativeToolTip": "Plants\\Forms\\AddCareLogForm.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAiwCQAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAwwEMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T14:36:43.101Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 21,
               "Title": "PlantManagerForm.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\PlantManagerForm.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\PlantManagerForm.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\PlantManagerForm.cs",
               "RelativeToolTip": "Plants\\Forms\\PlantManagerForm.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAuwCUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAswDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T14:36:39.175Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 33,
               "Title": "AddCareLogForm.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\AddCareLogForm.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\AddCareLogForm.cs",
@@ -376,7 +528,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 23,
               "Title": "CareLogListControl.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\CareLogListControl.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\CareLogListControl.cs",
@@ -388,46 +540,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 13,
               "Title": "Species.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Models\\Species.cs",
               "RelativeDocumentMoniker": "Plants\\Models\\Species.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Models\\Species.cs",
               "RelativeToolTip": "Plants\\Models\\Species.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAYwCUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T14:20:05.983Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "Plant.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Models\\Plant.cs",
               "RelativeDocumentMoniker": "Plants\\Models\\Plant.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Models\\Plant.cs",
               "RelativeToolTip": "Plants\\Models\\Plant.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAADwvzAAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T14:18:25.287Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 14,
               "Title": "CareLog.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Models\\CareLog.cs",
               "RelativeDocumentMoniker": "Plants\\Models\\CareLog.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Models\\CareLog.cs",
               "RelativeToolTip": "Plants\\Models\\CareLog.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAwwDoAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAnwEYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T14:18:24.707Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 29,
               "Title": "PlantManagerForm.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\PlantManagerForm.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\PlantManagerForm.cs",
@@ -439,26 +591,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 19,
               "Title": "CareLogListControl.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\CareLogListControl.Designer.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\CareLogListControl.Designer.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\CareLogListControl.Designer.cs",
               "RelativeToolTip": "Plants\\Forms\\CareLogListControl.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAewB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T20:16:29.061Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "PlantDetailsControl.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\PlantDetailsControl.Designer.cs",
               "RelativeDocumentMoniker": "Plants\\Forms\\PlantDetailsControl.Designer.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\Plants\\Plants\\Forms\\PlantDetailsControl.Designer.cs",
               "RelativeToolTip": "Plants\\Forms\\PlantDetailsControl.Designer.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAADwv2IAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAowBgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T20:16:26.82Z",
               "EditorCaption": ""

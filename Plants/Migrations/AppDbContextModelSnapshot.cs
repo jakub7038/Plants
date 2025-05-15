@@ -105,11 +105,15 @@ namespace Plants.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<double?>("Humidity")
-                        .HasColumnType("double precision");
+                    b.Property<string>("IdealHumidity")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
-                    b.Property<double>("IdealTemperature")
-                        .HasColumnType("double precision");
+                    b.Property<string>("IdealTemperature")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("Name")
                         .IsRequired()

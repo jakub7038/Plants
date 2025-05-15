@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Plants.Helper
+namespace Plants.Data.Helpers
 {
     public static class FileHelper
     {

@@ -58,7 +58,7 @@ namespace Plants.Forms
                 {
                     Name = speciesName,
                     Region = region,
-                    IdealTemperature = temp
+                    IdealTemperature = temp.ToString("temp")
                 };
 
                 _context.Species.Add(newSpecies);

@@ -11,7 +11,7 @@ namespace Plants.Models
         Przycinanie,
         Ochrona,
         Przesadzanie,
-        Kontrola_chorób
+        KontrolaChorób
     }
 
     public enum PlantHealthStatus

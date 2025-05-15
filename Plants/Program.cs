@@ -3,9 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Plants.Data;
+using Plants.Data.Helpers;
 using System;
 using System.Windows.Forms;
 using Plants.Forms;
+
 
 namespace Plants
 {
@@ -29,10 +31,16 @@ namespace Plants
                     );
                 })
                 .Build();
-            
+
             if (args.Length > 0 && args[0] == "--seed") // argument --seed do seedowanie
             {
                 SeedDatabase(host);
+                return;
+            }
+
+            if (args.Length > 0 && args[0] == "--clean") // argument --clean do seedowanie
+            {
+                CleanDatabase(host);
                 return;
             }
 
@@ -40,7 +48,7 @@ namespace Plants
             Application.Run(new PlantManagerForm());
         }
 
-        private static void SeedDatabase(IHost host)
+        static void SeedDatabase(IHost host)
         {
             using var scope = host.Services.CreateScope();
             var services = scope.ServiceProvider;
@@ -49,11 +57,28 @@ namespace Plants
             {
                 var context = services.GetRequiredService<AppDbContext>();
                 DatabaseSeeder.Seed(context);
-                Console.WriteLine("Dane zosta³y za³adowane!");
+                Console.WriteLine("Dane zosta³y za³adowane pomyœlnie!");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"B³¹d podczas seedowania bazy danych: {ex.Message}");
+            }
+        }
+
+        static void CleanDatabase(IHost host)
+        {
+            using var scope = host.Services.CreateScope();
+            var services = scope.ServiceProvider;
+
+            try
+            {
+                var context = services.GetRequiredService<AppDbContext>();
+                DatabaseCleaner.Clean(context);
+                Console.WriteLine("Baza zosta³a wyczyszczona pomyœlnie!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"B³¹d podczas czyszczenia bazy danych: {ex.Message}");
             }
         }
 

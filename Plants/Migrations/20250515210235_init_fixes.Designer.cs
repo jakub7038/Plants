@@ -12,8 +12,8 @@ using Plants.Data;
 namespace Plants.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250515175527_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250515210235_init_fixes")]
+    partial class init_fixes
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -108,11 +108,15 @@ namespace Plants.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<double?>("Humidity")
-                        .HasColumnType("double precision");
+                    b.Property<string>("IdealHumidity")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
-                    b.Property<double>("IdealTemperature")
-                        .HasColumnType("double precision");
+                    b.Property<string>("IdealTemperature")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("Name")
                         .IsRequired()

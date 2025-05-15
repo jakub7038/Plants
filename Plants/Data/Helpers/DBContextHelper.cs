@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Plants.Data;
-using System.IO;
 
 namespace Plants.Data.Helpers
 {

@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Plants.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class init_fixes : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -20,8 +20,8 @@ namespace Plants.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     Region = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    IdealTemperature = table.Column<double>(type: "double precision", nullable: false),
-                    Humidity = table.Column<double>(type: "double precision", nullable: true)
+                    IdealTemperature = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    IdealHumidity = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
