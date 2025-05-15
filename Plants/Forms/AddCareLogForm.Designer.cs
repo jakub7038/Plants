@@ -93,6 +93,8 @@
             numTemp.Minimum = -50;
             numTemp.Maximum = 100;
             numTemp.Value = 20;
+            numTemp.DecimalPlaces = 1;
+            numTemp.Increment = 0.1M; 
             mainLayout.Controls.Add(numTemp, 1, row++);
             mainLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
@@ -101,6 +103,8 @@
             numHumidity.Minimum = 0;
             numHumidity.Maximum = 100;
             numHumidity.Value = 50;
+            numHumidity.DecimalPlaces = 1;
+            numHumidity.Increment = 0.1M;
             mainLayout.Controls.Add(numHumidity, 1, row++);
             mainLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
@@ -109,6 +113,8 @@
             numGrowth.Minimum = 0;
             numGrowth.Maximum = 500;
             numGrowth.Value = 30;
+            numGrowth.DecimalPlaces = 1;
+            numGrowth.Increment = 0.1M;
             mainLayout.Controls.Add(numGrowth, 1, row++);
             mainLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 

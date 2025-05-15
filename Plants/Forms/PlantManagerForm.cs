@@ -13,12 +13,18 @@ namespace Plants.Forms
         public PlantManagerForm()
         {
             InitializeComponent();
-            _plantService.LoadStaticData();
+            InitializeCustomLogic();
+        }
+
+        private void InitializeCustomLogic()
+        {
             PopulatePlantList();
 
             Width = 1250;
             Height = 800;
             MinimumSize = new System.Drawing.Size(1000, 700);
+
+            listBoxPlants.SelectedIndexChanged += ListBoxPlants_SelectedIndexChanged;
         }
 
         private void PopulatePlantList()
@@ -28,28 +34,39 @@ namespace Plants.Forms
             listBoxPlants.DataSource = _plantService.GetPlants();
         }
 
-        private void listBoxPlants_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBoxPlants_SelectedIndexChanged(object? sender, EventArgs e)
         {
-            if (listBoxPlants.SelectedItem is Plant selected)
+            if (listBoxPlants.SelectedItem is Plant selectedPlant)
             {
-                plantDetailsControl.LoadPlant(selected);
-                careLogListControl.LoadLogs(selected.CareLogs.ToList());
+                var freshPlant = _plantService.GetPlantWithCareLogs(selectedPlant.Id);
+                if (freshPlant != null)
+                {
+                    plantDetailsControl.LoadPlant(freshPlant);
+                    careLogListControl.LoadLogs(freshPlant.CareLogs.ToList());
+                }
             }
         }
 
-        private void btnAddCareLog_Click(object sender, EventArgs e)
+        private readonly CareLogService _careLogService = new();
+        private void BtnAddCareLog_Click(object? sender, EventArgs e)
         {
-            if (listBoxPlants.SelectedItem is not Plant selected)
+            if (listBoxPlants.SelectedItem is not Plant selectedPlant)
             {
                 MessageBox.Show("Najpierw wybierz roślinę.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            using var dlg = new AddCareLogForm(selected);
-            if (dlg.ShowDialog() == DialogResult.OK && dlg.CreatedLog != null)
+            using var addLogForm = new AddCareLogForm(selectedPlant);
+            if (addLogForm.ShowDialog() == DialogResult.OK && addLogForm.CreatedLog != null)
             {
-                _plantService.AddCareLog(selected, dlg.CreatedLog);
-                careLogListControl.LoadLogs(selected.CareLogs.ToList());
+                _careLogService.AddCareLog(addLogForm.CreatedLog);
+
+                var freshPlant = _plantService.GetPlantWithCareLogs(selectedPlant.Id);
+                if (freshPlant != null)
+                {
+                    plantDetailsControl.LoadPlant(freshPlant);
+                    careLogListControl.LoadLogs(freshPlant.CareLogs.ToList());
+                }
             }
         }
     }

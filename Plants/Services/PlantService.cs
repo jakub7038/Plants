@@ -1,51 +1,50 @@
-﻿using Plants.Models;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Plants.Data.Helpers;
+using Plants.Models;
 
 namespace Plants.Services
 {
     public class PlantService
     {
-        private readonly List<Plant> _plants = new();
-
-        public List<Plant> GetPlants() => _plants;
-
-        public void LoadStaticData()
+        public List<Plant> GetPlants()
         {
-            var species1 = new Species("Ficus", "Tropics", "[22, 60]","[20]");
-            var species2 = new Species("Cactus", "Desert", "[28, 20]","[20]");
-
-            var plant1 = new Plant("Benek", species1);
-            var plant2 = new Plant("Ziggy", species2);
-
-            plant1.CareLogs.Add(new CareLog(
-                action: CareActionType.Podlewanie,
-                careDate: DateTime.Now.AddDays(-2),
-                plantId: plant1.Id,
-                healthStatus: PlantHealthStatus.Doskonała,
-                comment: "Użyto filtrowanej wody",
-                temperatureAtCare: 22,
-                humidityAtCare: 55,
-                growthMeasurementCm: 120
-            ));
-
-            plant2.CareLogs.Add(new CareLog(
-                action: CareActionType.Nawożenie,
-                careDate: DateTime.Now.AddDays(-10),
-                plantId: plant2.Id,
-                healthStatus: PlantHealthStatus.Dobra,
-                comment: "Zastosowano nawóz uniwersalny",
-                temperatureAtCare: 28,
-                humidityAtCare: 25,
-                growthMeasurementCm: 45,
-                observedProblems: "Liście lekko suche"
-            ));
-
-            _plants.AddRange(new[] { plant1, plant2 });
+            using var context = DbContextHelper.Create();
+            return context.Plants
+                .Select(p => new Plant
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Species = p.Species,
+                    SpeciesId = p.SpeciesId
+                })
+                .ToList();
         }
 
-        public void AddCareLog(Plant plant, CareLog log)
+        public Plant? GetPlantWithCareLogs(int plantId)
         {
-            plant.CareLogs.Add(log);
+            using var context = DbContextHelper.Create();
+            return context.Plants
+                .Where(p => p.Id == plantId)
+                .Select(p => new Plant
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Species = p.Species,
+                    SpeciesId = p.SpeciesId,
+                    CareLogs = p.CareLogs
+                        .OrderByDescending(log => log.CareDate)
+                        .ToList()
+                })
+                .FirstOrDefault();
+        }
+
+        public void AddCareLog(Plant plant, CareLog careLog)
+        {
+            using var context = DbContextHelper.Create();
+            careLog.PlantId = plant.Id;
+            context.CareLogs.Add(careLog);
+            context.SaveChanges();
         }
     }
 }
-

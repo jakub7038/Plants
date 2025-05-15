@@ -25,7 +25,7 @@ namespace Plants.Forms
             {
                 CreatedLog = new CareLog(
                     action: action,
-                    careDate: dateTimePicker.Value,
+                    careDate: DateTime.SpecifyKind(dateTimePicker.Value, DateTimeKind.Utc),
                     plantId: _selectedPlant.Id,
                     comment: txtComment.Text,
                     temperatureAtCare: (double)numTemp.Value,

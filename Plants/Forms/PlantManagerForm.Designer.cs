@@ -53,7 +53,7 @@
             btnAddCareLog.Size = new System.Drawing.Size(184, 36);
             btnAddCareLog.TabIndex = 0;
             btnAddCareLog.Text = "Dodaj wpis opieki";
-            btnAddCareLog.Click += btnAddCareLog_Click;
+            this.btnAddCareLog.Click += new System.EventHandler(this.BtnAddCareLog_Click);
 
             listBoxPlants.Dock = DockStyle.Fill;
             listBoxPlants.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -61,7 +61,7 @@
             listBoxPlants.Name = "listBoxPlants";
             listBoxPlants.Size = new System.Drawing.Size(184, 748);
             listBoxPlants.TabIndex = 1;
-            listBoxPlants.SelectedIndexChanged += listBoxPlants_SelectedIndexChanged;
+            this.listBoxPlants.SelectedIndexChanged += new System.EventHandler(this.ListBoxPlants_SelectedIndexChanged);
 
             careLogListControl.Dock = DockStyle.Fill;
             careLogListControl.Location = new System.Drawing.Point(8, 168);

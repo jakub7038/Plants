@@ -16,8 +16,8 @@ namespace Plants.Forms
             lblName.Text = $"Nazwa: {plant.Name}";
             lblRegion.Text = $"Region: {plant.Species.Region}";
             lblSpecies.Text = $"Gatunek: {plant.Species.Name}";
-            lblTemp.Text = $"Idealna temp.: {plant.Species.IdealTemperature} °C";
-            lblHumidity.Text = $"Wilgotność: {plant.Species.IdealHumidity}%";
+            lblTemp.Text = $"Idealna temp.: {plant.Species.IdealTemperature}";
+            lblHumidity.Text = $"Wilgotność: {plant.Species.IdealHumidity}";
 
             lblLastWatering.Text = plant.LastWateringDate.HasValue ? $"Ostatnie podlewanie: {plant.LastWateringDate.Value:g}" : "Ostatnie podlewanie: brak danych";
             lblLastFertilizing.Text = plant.LastFertilizationDate.HasValue ? $"Ostatnie nawożenie: {plant.LastFertilizationDate.Value:g}" : "Ostatnie nawożenie: brak danych";
