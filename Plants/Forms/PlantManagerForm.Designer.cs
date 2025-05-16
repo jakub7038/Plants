@@ -8,6 +8,7 @@
         private System.Windows.Forms.Button btnAddCareLog;
         private PlantDetailsControl plantDetailsControl;
         private CareLogListControl careLogListControl;
+        private TextBox textBoxSearch;
 
         protected override void Dispose(bool disposing)
         {
@@ -88,6 +89,12 @@
             ((System.ComponentModel.ISupportInitialize)(splitContainer)).EndInit();
             splitContainer.ResumeLayout(false);
             ResumeLayout(false);
+
+            textBoxSearch = new TextBox();
+            textBoxSearch.Dock = DockStyle.Top;
+            textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
+            textBoxSearch.PlaceholderText = "Szukaj rośliny lub gatunku...";
+            splitContainer.Panel1.Controls.Add(textBoxSearch);
         }
     }
 }

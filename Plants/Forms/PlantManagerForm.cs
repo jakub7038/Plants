@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Plants.Models;
@@ -9,7 +10,9 @@ namespace Plants.Forms
     public partial class PlantManagerForm : Form
     {
         private readonly PlantService _plantService = new();
+        private readonly CareLogService _careLogService = new();
 
+        private List<Plant> _allPlants = new();
         public PlantManagerForm()
         {
             InitializeComponent();
@@ -18,24 +21,36 @@ namespace Plants.Forms
 
         private void InitializeCustomLogic()
         {
-            PopulatePlantList();
-
             Width = 1250;
             Height = 800;
             MinimumSize = new System.Drawing.Size(1000, 700);
 
+            textBoxSearch.TextChanged += (s, e) => ApplyPlantFilter();
             listBoxPlants.SelectedIndexChanged += ListBoxPlants_SelectedIndexChanged;
-            careLogListControl.CareLogSelected += selectedLog =>
-            {
-                plantDetailsControl.LoadCareLogPhoto(selectedLog);
-            };
+            btnAddCareLog.Click += BtnAddCareLog_Click;
+
+            LoadPlantList();
         }
 
-        private void PopulatePlantList()
+        private void LoadPlantList()
         {
-            listBoxPlants.DisplayMember = "Name";
+            _allPlants = _plantService.GetPlants();
+            ApplyPlantFilter();
+        }
+
+        private void ApplyPlantFilter()
+        {
+            string query = textBoxSearch.Text.Trim().ToLower();
+
+            var filtered = string.IsNullOrEmpty(query)
+                ? _allPlants
+                : _allPlants.Where(p =>
+                    p.Name.ToLower().Contains(query) ||
+                    p.Species.Name.ToLower().Contains(query)).ToList();
+
             listBoxPlants.DataSource = null;
-            listBoxPlants.DataSource = _plantService.GetPlants();
+            listBoxPlants.DataSource = filtered;
+            listBoxPlants.DisplayMember = "Name";
         }
 
         private void ListBoxPlants_SelectedIndexChanged(object? sender, EventArgs e)
@@ -51,7 +66,6 @@ namespace Plants.Forms
             }
         }
 
-        private readonly CareLogService _careLogService = new();
         private void BtnAddCareLog_Click(object? sender, EventArgs e)
         {
             if (listBoxPlants.SelectedItem is not Plant selectedPlant)
@@ -73,6 +87,5 @@ namespace Plants.Forms
                 }
             }
         }
-
     }
 }
