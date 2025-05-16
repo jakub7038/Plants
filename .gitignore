@@ -54,3 +54,11 @@ appsettings.Development.json  # Ignore local development configs
 *.vspscc
 *.vssscc
 *.sln.docstates
+.vs/Plants/DesignTimeBuild/.dtbcache.v2
+.vs/Plants/v17/DocumentLayout.backup.json
+.vs/Plants/v17/DocumentLayout.json
+.vs/Plants/v17/.suo
+.vs/Plants/DesignTimeBuild/.dtbcache.v2
+.vs/Plants/v17/.suo
+.vs/Plants/v17/DocumentLayout.backup.json
+.vs/Plants/v17/DocumentLayout.json
