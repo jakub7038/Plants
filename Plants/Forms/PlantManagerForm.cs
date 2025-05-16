@@ -28,6 +28,13 @@ namespace Plants.Forms
             textBoxSearch.TextChanged += (s, e) => ApplyPlantFilter();
             listBoxPlants.SelectedIndexChanged += ListBoxPlants_SelectedIndexChanged;
             btnAddCareLog.Click += BtnAddCareLog_Click;
+            btnAddPlant.Click += BtnAddPlant_Click;
+            btnAddSpecies.Click += BtnAddSpecies_Click;
+
+            careLogListControl.CareLogSelected += selectedLog =>
+            {
+                plantDetailsControl.LoadCareLogPhoto(selectedLog);
+            };
 
             LoadPlantList();
         }
@@ -86,6 +93,26 @@ namespace Plants.Forms
                     careLogListControl.LoadLogs(freshPlant.CareLogs.ToList());
                 }
             }
+        }
+
+        private void BtnAddPlant_Click(object? sender, EventArgs e)
+        {
+            using var form = new AddPlantForm();
+            if (form.ShowDialog() == DialogResult.OK && form.CreatedPlant != null)
+            {
+                _allPlants = _plantService.GetPlants();
+                ApplyPlantFilter();
+                listBoxPlants.SelectedItem = _allPlants.FirstOrDefault(p => p.Id == form.CreatedPlant.Id);
+            }
+        }
+
+        private void BtnAddSpecies_Click(object? sender, EventArgs e)
+        {
+            using var form = new SpeciesForm();
+            form.ShowDialog();
+
+            _allPlants = _plantService.GetPlants();
+            ApplyPlantFilter();
         }
     }
 }

@@ -7,6 +7,7 @@ using Plants.Data.Helpers;
 using System;
 using System.Windows.Forms;
 using Plants.Forms;
+using Plants.Helpers;
 
 
 namespace Plants
@@ -81,7 +82,5 @@ namespace Plants
                 Console.WriteLine($"B³¹d podczas czyszczenia bazy danych: {ex.Message}");
             }
         }
-
-
     }
 }

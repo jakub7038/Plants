@@ -1,20 +1,38 @@
-﻿using Plants.Data;
-using Plants.Data.Helpers;
-using Plants.Models;
-using System;
+﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using Plants.Models;
+using Plants.Services;
 
 namespace Plants.Forms
 {
     public partial class SpeciesForm : Form
     {
-        private readonly AppDbContext _context;
+        private readonly SpeciesService _speciesService = new();
 
         public SpeciesForm()
         {
             InitializeComponent();
-            _context = DbContextHelper.Create();
+
+            MinimumSize = new System.Drawing.Size(700, 500);
+            MaximumSize = new System.Drawing.Size(1000, 700);
+
+            mainLayoutPanel.RowStyles[2].SizeType = SizeType.Absolute;
+            mainLayoutPanel.RowStyles[2].Height = 240;
+
+            addSpeciesControl.Dock = DockStyle.Fill;
+            addSpeciesControl.Margin = new Padding(10);
+            mainLayoutPanel.SetColumnSpan(addSpeciesControl, 2);
+
+            addSpeciesControl.SpeciesAdded += (s, e) =>
+            {
+                LoadSpeciesData();
+                ApplyFilter();
+            };
+
+            txtSearch.TextChanged += (s, e) => ApplyFilter();
+            speciesListBox.SelectedIndexChanged += speciesListBox_SelectedIndexChanged;
+
             LoadSpeciesData();
         }
 
@@ -22,7 +40,7 @@ namespace Plants.Forms
         {
             try
             {
-                var speciesList = _context.Species.ToList();
+                var speciesList = _speciesService.GetAllSpecies();
                 speciesListBox.DataSource = null;
                 speciesListBox.DataSource = speciesList;
                 speciesListBox.DisplayMember = "Name";
@@ -35,46 +53,32 @@ namespace Plants.Forms
             }
         }
 
-        private void speciesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ApplyFilter()
+        {
+            var query = txtSearch.Text.Trim().ToLower();
+            var allSpecies = _speciesService.GetAllSpecies();
+
+            var filtered = string.IsNullOrEmpty(query)
+                ? allSpecies
+                : allSpecies.Where(s =>
+                    s.Name.ToLower().Contains(query) ||
+                    s.Region.ToLower().Contains(query)).ToList();
+
+            speciesListBox.DataSource = null;
+            speciesListBox.DataSource = filtered;
+            speciesListBox.DisplayMember = "Name";
+            speciesListBox.ValueMember = "Id";
+        }
+
+        private void speciesListBox_SelectedIndexChanged(object? sender, EventArgs e)
         {
             if (speciesListBox.SelectedItem is Species selectedSpecies)
             {
                 speciesDetailsLabel.Text =
                     $"Nazwa: {selectedSpecies.Name}\n" +
                     $"Region: {selectedSpecies.Region}\n" +
-                    $"Idealna temperatura: {selectedSpecies.IdealTemperature} °C";
-            }
-        }
-
-        private void btnAddSpecies_Click(object sender, EventArgs e)
-        {
-            var speciesName = speciesNameTextBox.Text.Trim();
-            var region = regionTextBox.Text.Trim();
-            var isValidTemp = double.TryParse(idealTemperatureTextBox.Text.Trim(), out var temp);
-
-            if (!string.IsNullOrWhiteSpace(speciesName) && !string.IsNullOrWhiteSpace(region) && isValidTemp)
-            {
-                var newSpecies = new Species
-                {
-                    Name = speciesName,
-                    Region = region,
-                    IdealTemperature = temp.ToString("temp")
-                };
-
-                _context.Species.Add(newSpecies);
-                _context.SaveChanges();
-                LoadSpeciesData();
-
-                speciesListBox.SelectedItem = _context.Species.OrderByDescending(s => s.Id).FirstOrDefault();
-
-                MessageBox.Show("Gatunek dodany pomyślnie!", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                speciesNameTextBox.Clear();
-                regionTextBox.Clear();
-                idealTemperatureTextBox.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Wprowadź poprawne dane wszystkich pól.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    $"Idealna temperatura: {selectedSpecies.IdealTemperature}\n" +
+                    $"Idealna wilgotność: {selectedSpecies.IdealHumidity}";
             }
         }
     }

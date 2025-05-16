@@ -4,39 +4,46 @@
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.SplitContainer splitContainer;
+        private System.Windows.Forms.Panel panelLeftContent;
         private System.Windows.Forms.ListBox listBoxPlants;
+        private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Button btnAddCareLog;
+        private System.Windows.Forms.Button btnAddPlant;
+        private System.Windows.Forms.Button btnAddSpecies;
         private PlantDetailsControl plantDetailsControl;
         private CareLogListControl careLogListControl;
-        private TextBox textBoxSearch;
 
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             splitContainer = new SplitContainer();
-            btnAddCareLog = new Button();
+            panelLeftContent = new Panel();
             listBoxPlants = new ListBox();
+            textBoxSearch = new TextBox();
+            btnAddCareLog = new Button();
+            btnAddPlant = new Button();
+            btnAddSpecies = new Button();
             careLogListControl = new CareLogListControl();
             plantDetailsControl = new PlantDetailsControl();
+
             ((System.ComponentModel.ISupportInitialize)(splitContainer)).BeginInit();
             splitContainer.Panel1.SuspendLayout();
             splitContainer.Panel2.SuspendLayout();
             splitContainer.SuspendLayout();
+            panelLeftContent.SuspendLayout();
             SuspendLayout();
 
             splitContainer.Dock = DockStyle.Fill;
             splitContainer.Location = new System.Drawing.Point(0, 0);
             splitContainer.Name = "splitContainer";
-            splitContainer.Panel1.Controls.Add(btnAddCareLog);
-            splitContainer.Panel1.Controls.Add(listBoxPlants);
+            splitContainer.Panel1.Controls.Add(panelLeftContent);
             splitContainer.Panel1.Padding = new Padding(8);
             splitContainer.Panel1MinSize = 200;
             splitContainer.Panel2.Controls.Add(careLogListControl);
@@ -47,22 +54,51 @@
             splitContainer.SplitterDistance = 200;
             splitContainer.TabIndex = 0;
 
+            panelLeftContent.Dock = DockStyle.Fill;
+            panelLeftContent.Controls.Add(btnAddCareLog);
+            panelLeftContent.Controls.Add(btnAddPlant);
+            panelLeftContent.Controls.Add(btnAddSpecies);
+            panelLeftContent.Controls.Add(listBoxPlants);
+            panelLeftContent.Controls.Add(textBoxSearch);
+            panelLeftContent.Location = new System.Drawing.Point(8, 8);
+            panelLeftContent.Name = "panelLeftContent";
+            panelLeftContent.Size = new System.Drawing.Size(184, 784);
+            panelLeftContent.TabIndex = 0;
+
             btnAddCareLog.Dock = DockStyle.Bottom;
             btnAddCareLog.Font = new System.Drawing.Font("Segoe UI", 9F);
-            btnAddCareLog.Location = new System.Drawing.Point(8, 756);
             btnAddCareLog.Name = "btnAddCareLog";
             btnAddCareLog.Size = new System.Drawing.Size(184, 36);
             btnAddCareLog.TabIndex = 0;
             btnAddCareLog.Text = "Dodaj wpis opieki";
-            this.btnAddCareLog.Click += new System.EventHandler(this.BtnAddCareLog_Click);
+
+            btnAddPlant.Dock = DockStyle.Bottom;
+            btnAddPlant.Font = new System.Drawing.Font("Segoe UI", 9F);
+            btnAddPlant.Name = "btnAddPlant";
+            btnAddPlant.Size = new System.Drawing.Size(184, 36);
+            btnAddPlant.TabIndex = 1;
+            btnAddPlant.Text = "Dodaj roślinę";
+
+            btnAddSpecies.Dock = DockStyle.Bottom;
+            btnAddSpecies.Font = new System.Drawing.Font("Segoe UI", 9F);
+            btnAddSpecies.Name = "btnAddSpecies";
+            btnAddSpecies.Size = new System.Drawing.Size(184, 36);
+            btnAddSpecies.TabIndex = 2;
+            btnAddSpecies.Text = "Gatunkiℹ";
 
             listBoxPlants.Dock = DockStyle.Fill;
             listBoxPlants.Font = new System.Drawing.Font("Segoe UI", 10F);
-            listBoxPlants.Location = new System.Drawing.Point(8, 8);
+            listBoxPlants.FormattingEnabled = true;
+            listBoxPlants.ItemHeight = 17;
             listBoxPlants.Name = "listBoxPlants";
-            listBoxPlants.Size = new System.Drawing.Size(184, 748);
-            listBoxPlants.TabIndex = 1;
-            this.listBoxPlants.SelectedIndexChanged += new System.EventHandler(this.ListBoxPlants_SelectedIndexChanged);
+            listBoxPlants.TabIndex = 3;
+            listBoxPlants.SelectedIndexChanged += new System.EventHandler(this.ListBoxPlants_SelectedIndexChanged);
+
+            textBoxSearch.Dock = DockStyle.Top;
+            textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
+            textBoxSearch.PlaceholderText = "Szukaj rośliny lub gatunku...";
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.TabIndex = 4;
 
             careLogListControl.Dock = DockStyle.Fill;
             careLogListControl.Location = new System.Drawing.Point(8, 168);
@@ -88,13 +124,9 @@
             splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(splitContainer)).EndInit();
             splitContainer.ResumeLayout(false);
+            panelLeftContent.ResumeLayout(false);
+            panelLeftContent.PerformLayout();
             ResumeLayout(false);
-
-            textBoxSearch = new TextBox();
-            textBoxSearch.Dock = DockStyle.Top;
-            textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
-            textBoxSearch.PlaceholderText = "Szukaj rośliny lub gatunku...";
-            splitContainer.Panel1.Controls.Add(textBoxSearch);
         }
     }
 }

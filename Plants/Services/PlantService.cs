@@ -46,5 +46,23 @@ namespace Plants.Services
             context.CareLogs.Add(careLog);
             context.SaveChanges();
         }
+
+        public void AddPlant(Plant plant)
+        {
+            using var context = DbContextHelper.Create();
+
+            var species = context.Species.Find(plant.SpeciesId);
+            if (species == null) throw new InvalidOperationException("Nie znaleziono takiego gatunku.");
+
+            plant.Species = species;
+            context.Plants.Add(plant);
+            context.SaveChanges();
+        }
+
+        public bool DoesPlantExist(string name)
+        {
+            using var context = DbContextHelper.Create();
+            return context.Plants.Any(p => p.Name.ToLower() == name.ToLower());
+        }
     }
 }
