@@ -3,14 +3,17 @@
     partial class PlantDetailsControl
     {
         private System.ComponentModel.IContainer components = null;
+        private TableLayoutPanel tlpMain;
+        private FlowLayoutPanel flowDetails;
         private Label lblName;
         private Label lblRegion;
         private Label lblSpecies;
         private Label lblTemp;
         private Label lblHumidity;
-        private PictureBox picPhoto;
         private Label lblLastWatering;
         private Label lblLastFertilizing;
+        private RichTextBox rtbComments;
+        private PictureBox picPhoto;
 
         protected override void Dispose(bool disposing)
         {
@@ -21,6 +24,8 @@
 
         private void InitializeComponent()
         {
+            tlpMain = new TableLayoutPanel();
+            flowDetails = new FlowLayoutPanel();
             lblName = new Label();
             lblRegion = new Label();
             lblSpecies = new Label();
@@ -28,71 +33,92 @@
             lblHumidity = new Label();
             lblLastWatering = new Label();
             lblLastFertilizing = new Label();
+            rtbComments = new RichTextBox();
             picPhoto = new PictureBox();
-
+            ((System.ComponentModel.ISupportInitialize)picPhoto).BeginInit();
             SuspendLayout();
-
+            // 
+            // tlpMain
+            // 
+            tlpMain.ColumnCount = 3;
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
+            tlpMain.RowCount = 1;
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpMain.Dock = DockStyle.Fill;
+            tlpMain.Controls.Add(flowDetails, 0, 0);
+            tlpMain.Controls.Add(rtbComments, 1, 0);
+            tlpMain.Controls.Add(picPhoto, 2, 0);
+            // 
+            // flowDetails
+            // 
+            flowDetails.FlowDirection = FlowDirection.TopDown;
+            flowDetails.AutoSize = true;
+            flowDetails.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowDetails.Controls.Add(lblName);
+            flowDetails.Controls.Add(lblRegion);
+            flowDetails.Controls.Add(lblSpecies);
+            flowDetails.Controls.Add(lblTemp);
+            flowDetails.Controls.Add(lblHumidity);
+            flowDetails.Controls.Add(lblLastWatering);
+            flowDetails.Controls.Add(lblLastFertilizing);
+            // 
+            // lblName
+            // 
             lblName.AutoSize = true;
-            lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lblName.Location = new System.Drawing.Point(8, 8);
-            lblName.Name = "lblName";
-            lblName.Size = new System.Drawing.Size(51, 21);
+            lblName.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblName.Text = "Nazwa";
-
+            // 
+            // lblRegion
+            // 
             lblRegion.AutoSize = true;
-            lblRegion.Location = new System.Drawing.Point(8, 40);
-            lblRegion.Name = "lblRegion";
-            lblRegion.Size = new System.Drawing.Size(46, 15);
             lblRegion.Text = "Region";
-
+            // 
+            // lblSpecies
+            // 
             lblSpecies.AutoSize = true;
-            lblSpecies.Location = new System.Drawing.Point(8, 60);
-            lblSpecies.Name = "lblSpecies";
-            lblSpecies.Size = new System.Drawing.Size(50, 15);
             lblSpecies.Text = "Gatunek";
-
+            // 
+            // lblTemp
+            // 
             lblTemp.AutoSize = true;
-            lblTemp.Location = new System.Drawing.Point(8, 80);
-            lblTemp.Name = "lblTemp";
-            lblTemp.Size = new System.Drawing.Size(83, 15);
             lblTemp.Text = "Temperatura";
-
+            // 
+            // lblHumidity
+            // 
             lblHumidity.AutoSize = true;
-            lblHumidity.Location = new System.Drawing.Point(8, 100);
-            lblHumidity.Name = "lblHumidity";
-            lblHumidity.Size = new System.Drawing.Size(65, 15);
             lblHumidity.Text = "Wilgotność";
-
+            // 
+            // lblLastWatering
+            // 
             lblLastWatering.AutoSize = true;
-            lblLastWatering.Location = new System.Drawing.Point(8, 120);
-            lblLastWatering.Name = "lblLastWatering";
-            lblLastWatering.Size = new System.Drawing.Size(111, 15);
             lblLastWatering.Text = "Ostatnie podlewanie";
-
+            // 
+            // lblLastFertilizing
+            // 
             lblLastFertilizing.AutoSize = true;
-            lblLastFertilizing.Location = new System.Drawing.Point(8, 140);
-            lblLastFertilizing.Name = "lblLastFertilizing";
-            lblLastFertilizing.Size = new System.Drawing.Size(119, 15);
             lblLastFertilizing.Text = "Ostatnie nawożenie";
-
-            picPhoto.Location = new System.Drawing.Point(250, 8);
-            picPhoto.Size = new System.Drawing.Size(140, 140);
+            // 
+            // rtbComments
+            // 
+            rtbComments.Dock = DockStyle.Fill;
+            rtbComments.ReadOnly = true;
+            rtbComments.ScrollBars = RichTextBoxScrollBars.Vertical;
+            // 
+            // picPhoto
+            // 
             picPhoto.BorderStyle = BorderStyle.FixedSingle;
+            picPhoto.Dock = DockStyle.Fill;
             picPhoto.SizeMode = PictureBoxSizeMode.Zoom;
-
-            Controls.Add(lblName);
-            Controls.Add(lblRegion);
-            Controls.Add(lblSpecies);
-            Controls.Add(lblTemp);
-            Controls.Add(lblHumidity);
-            Controls.Add(lblLastWatering);
-            Controls.Add(lblLastFertilizing);
-            Controls.Add(picPhoto);
-
+            // 
+            // PlantDetailsControl
+            // 
+            Controls.Add(tlpMain);
             Name = "PlantDetailsControl";
-            Size = new System.Drawing.Size(400, 180);
+            Size = new Size(400, 180);
+            ((System.ComponentModel.ISupportInitialize)picPhoto).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
     }
 }
