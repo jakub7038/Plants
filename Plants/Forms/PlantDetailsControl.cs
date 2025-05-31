@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using Plants.Models;
 
@@ -9,6 +10,8 @@ namespace Plants.Forms
         public PlantDetailsControl()
         {
             InitializeComponent();
+            picPhoto.Cursor = Cursors.Hand;
+            picPhoto.Click += PicPhoto_Click;
         }
 
         public void LoadPlant(Plant plant, CareLog? selectedLog = null)
@@ -18,15 +21,18 @@ namespace Plants.Forms
             lblSpecies.Text = $"Gatunek: {plant.Species.Name}";
             lblTemp.Text = $"Idealna temp.: {plant.Species.IdealTemperature}";
             lblHumidity.Text = $"Wilgotność: {plant.Species.IdealHumidity}";
-
-            lblLastWatering.Text = plant.LastWateringDate.HasValue ? $"Ostatnie podlewanie: {plant.LastWateringDate.Value:g}" : "Ostatnie podlewanie: brak danych";
-            lblLastFertilizing.Text = plant.LastFertilizationDate.HasValue ? $"Ostatnie nawożenie: {plant.LastFertilizationDate.Value:g}" : "Ostatnie nawożenie: brak danych";
+            lblLastWatering.Text = plant.LastWateringDate.HasValue
+                ? $"Ostatnie podlewanie: {plant.LastWateringDate.Value:g}"
+                : "Ostatnie podlewanie: brak danych";
+            lblLastFertilizing.Text = plant.LastFertilizationDate.HasValue
+                ? $"Ostatnie nawożenie: {plant.LastFertilizationDate.Value:g}"
+                : "Ostatnie nawożenie: brak danych";
 
             picPhoto.Image = null;
             picPhoto.Visible = false;
-
             rtbComments.Clear();
         }
+
         public void LoadCareLogPhoto(CareLog? selectedLog)
         {
             if (selectedLog != null && selectedLog.Photo != null && selectedLog.Photo.Length > 0)
@@ -52,6 +58,32 @@ namespace Plants.Forms
             {
                 rtbComments.Clear();
             }
+        }
+
+        private void PicPhoto_Click(object? sender, EventArgs e)
+        {
+            if (picPhoto.Image == null)
+                return;
+
+            using var popup = new Form();
+            popup.StartPosition = FormStartPosition.CenterParent;
+            popup.FormBorderStyle = FormBorderStyle.FixedDialog;
+            popup.MaximizeBox = false;
+            popup.MinimizeBox = false;
+            popup.ShowIcon = false;
+            popup.ShowInTaskbar = false;
+            popup.Text = "Podgląd zdjęcia";
+            popup.ClientSize = new System.Drawing.Size(600, 600);
+
+            var largePb = new PictureBox
+            {
+                Dock = DockStyle.Fill,
+                Image = picPhoto.Image,
+                SizeMode = PictureBoxSizeMode.Zoom
+            };
+
+            popup.Controls.Add(largePb);
+            popup.ShowDialog(this);
         }
     }
 }

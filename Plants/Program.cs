@@ -33,8 +33,6 @@ namespace Plants
                 })
                 .Build();
 
-            CleanDatabase(host);
-            SeedDatabase(host);
 
             if (args.Length > 0 && args[0] == "--seed") // argument --seed do seedowanie
             {
