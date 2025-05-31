@@ -21,6 +21,12 @@ namespace Plants.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (dateTimePicker.Value > DateTime.Now)
+            {
+                MessageBox.Show("Data opieki nie może być w przyszłości.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (ValidateInputs(out var action, out var healthStatus))
             {
                 CreatedLog = new CareLog(
@@ -41,7 +47,7 @@ namespace Plants.Forms
             }
             else
             {
-                MessageBox.Show("Wybierz poprawną akcję i stan zdrowia rośliny.");
+                MessageBox.Show("Wybierz poprawną akcję i stan zdrowia rośliny.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -50,8 +56,11 @@ namespace Plants.Forms
             action = default;
             healthStatus = default;
 
-            if (!Enum.TryParse(cmbAction.SelectedItem?.ToString(), out action)) return false;
-            if (!Enum.TryParse(cmbHealthStatus.SelectedItem?.ToString(), out healthStatus)) return false;
+            if (!Enum.TryParse(cmbAction.SelectedItem?.ToString(), out action))
+                return false;
+
+            if (!Enum.TryParse(cmbHealthStatus.SelectedItem?.ToString(), out healthStatus))
+                return false;
 
             return true;
         }

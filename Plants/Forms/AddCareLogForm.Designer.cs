@@ -94,7 +94,7 @@
             numTemp.Maximum = 100;
             numTemp.Value = 20;
             numTemp.DecimalPlaces = 1;
-            numTemp.Increment = 0.1M; 
+            numTemp.Increment = 0.1M;
             mainLayout.Controls.Add(numTemp, 1, row++);
             mainLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 

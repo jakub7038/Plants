@@ -34,6 +34,7 @@ namespace Plants.Forms
             careLogListControl.CareLogSelected += selectedLog =>
             {
                 plantDetailsControl.LoadCareLogPhoto(selectedLog);
+                plantDetailsControl.LoadCareLogComment(selectedLog);
             };
 
             LoadPlantList();

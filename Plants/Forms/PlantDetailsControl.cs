@@ -24,6 +24,8 @@ namespace Plants.Forms
 
             picPhoto.Image = null;
             picPhoto.Visible = false;
+
+            rtbComments.Clear();
         }
         public void LoadCareLogPhoto(CareLog? selectedLog)
         {
@@ -37,6 +39,18 @@ namespace Plants.Forms
             {
                 picPhoto.Image = null;
                 picPhoto.Visible = false;
+            }
+        }
+
+        public void LoadCareLogComment(CareLog? selectedLog)
+        {
+            if (selectedLog != null && !string.IsNullOrWhiteSpace(selectedLog.Comment))
+            {
+                rtbComments.Text = selectedLog.Comment;
+            }
+            else
+            {
+                rtbComments.Clear();
             }
         }
     }

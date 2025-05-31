@@ -112,24 +112,23 @@ namespace Plants.Data.Helpers
                         var action = (CareActionType)allActions.GetValue(globalIndex % allActions.Length);
                         var allStatuses = Enum.GetValues<PlantHealthStatus>();
                         var health = (PlantHealthStatus)allStatuses.GetValue(globalIndex % allStatuses.Length);
-                        int temperatureAtCare = 15 + rand.Next(21); // 15..35
-                        int humidityAtCare = 30 + rand.Next(51);   // 30..80
-                        double growthCm = 10 + rand.NextDouble() * 5; // 10..15
+                        int temperatureAtCare = 15 + rand.Next(21); 
+                        int humidityAtCare = 30 + rand.Next(51);
+                        double growthCm = 10 + rand.NextDouble() * 5;
 
                         string? comment = null;
                         string? observedProblems = null;
 
-                        if (rand.NextDouble() < 0.15) // 15% szans na problem
+                        if (rand.NextDouble() < 0.15)
                         {
                             observedProblems = problemComments[rand.Next(problemComments.Length)];
-                            comment = observedProblems + " dla " + plant.Name;
+                            comment = observedProblems;
                         }
-                        else if (rand.NextDouble() < 0.6) // 60% szans na pozytywny komentarz
+                        else if (rand.NextDouble() < 0.6)
                         {
                             var healthy = healthyComments[rand.Next(healthyComments.Length)];
-                            comment = healthy + " dla " + plant.Name;
+                            comment = healthy;
                         }
-                        // W pozostałych przypadkach obie wartości mogą pozostać null
 
                         logs.Add(new CareLog(
                             action: action,
