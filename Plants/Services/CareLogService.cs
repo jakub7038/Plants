@@ -12,5 +12,17 @@ namespace Plants.Services
             context.CareLogs.Add(careLog);
             context.SaveChanges();
         }
+
+        public void DeleteCareLog(int careLogId)
+        {
+            using var context = DbContextHelper.Create();
+
+            var existingLog = context.CareLogs.Find(careLogId);
+            if (existingLog != null)
+            {
+                context.CareLogs.Remove(existingLog);
+                context.SaveChanges();
+            }
+        }
     }
 }

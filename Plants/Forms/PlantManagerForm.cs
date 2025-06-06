@@ -37,6 +37,25 @@ namespace Plants.Forms
                 plantDetailsControl.LoadCareLogComment(selectedLog);
             };
 
+            plantDetailsControl.CareLogDeleted += () =>
+            {
+                if (listBoxPlants.SelectedItem is Plant selectedPlant)
+                {
+                    var freshPlant = _plantService.GetPlantWithCareLogs(selectedPlant.Id);
+                    if (freshPlant != null)
+                    {
+                        plantDetailsControl.LoadPlant(freshPlant);
+                        careLogListControl.LoadLogs(freshPlant.CareLogs.ToList());
+                    }
+                }
+            };
+
+            careLogListControl.CareLogSelected += selectedLog =>
+            {
+                plantDetailsControl.LoadCareLogPhoto(selectedLog);
+                plantDetailsControl.LoadCareLogComment(selectedLog);
+            };
+
             LoadPlantList();
         }
 

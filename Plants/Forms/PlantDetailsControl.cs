@@ -2,16 +2,20 @@
 using System.IO;
 using System.Windows.Forms;
 using Plants.Models;
+using Plants.Services;
 
 namespace Plants.Forms
 {
     public partial class PlantDetailsControl : UserControl
     {
+        private CareLog? _currentLog;
+        public event Action? CareLogDeleted;
         public PlantDetailsControl()
         {
             InitializeComponent();
             picPhoto.Cursor = Cursors.Hand;
             picPhoto.Click += PicPhoto_Click;
+            btnDeleteCareLog.Click += BtnDeleteCareLog_Click;
         }
 
         public void LoadPlant(Plant plant, CareLog? selectedLog = null)
@@ -31,10 +35,14 @@ namespace Plants.Forms
             picPhoto.Image = null;
             picPhoto.Visible = false;
             rtbComments.Clear();
+            btnDeleteCareLog.Visible = false;
+            _currentLog = null;
         }
 
         public void LoadCareLogPhoto(CareLog? selectedLog)
         {
+            _currentLog = selectedLog;
+
             if (selectedLog != null && selectedLog.Photo != null && selectedLog.Photo.Length > 0)
             {
                 using var ms = new MemoryStream(selectedLog.Photo);
@@ -46,6 +54,7 @@ namespace Plants.Forms
                 picPhoto.Image = null;
                 picPhoto.Visible = false;
             }
+            btnDeleteCareLog.Visible = (selectedLog != null);
         }
 
         public void LoadCareLogComment(CareLog? selectedLog)
@@ -58,6 +67,7 @@ namespace Plants.Forms
             {
                 rtbComments.Clear();
             }
+            btnDeleteCareLog.Visible = (selectedLog != null);
         }
 
         private void PicPhoto_Click(object? sender, EventArgs e)
@@ -84,6 +94,40 @@ namespace Plants.Forms
 
             popup.Controls.Add(largePb);
             popup.ShowDialog(this);
+        }
+
+        private void BtnDeleteCareLog_Click(object? sender, EventArgs e)
+        {
+            if (_currentLog == null)
+                return;
+
+            var result = MessageBox.Show(
+                "Czy na pewno chcesz usunąć ten wpis opieki?",
+                "Potwierdź usunięcie",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result != DialogResult.Yes)
+                return;
+
+            try
+            {
+                var service = new CareLogService();
+                service.DeleteCareLog(_currentLog.Id);
+
+                picPhoto.Image = null;
+                picPhoto.Visible = false;
+                rtbComments.Clear();
+                btnDeleteCareLog.Visible = false;
+                _currentLog = null;
+
+                CareLogDeleted?.Invoke();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Błąd podczas usuwania wpisu: {ex.Message}", "Błąd",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

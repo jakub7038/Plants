@@ -14,6 +14,7 @@
         private Label lblLastFertilizing;
         private RichTextBox rtbComments;
         private PictureBox picPhoto;
+        private Button btnDeleteCareLog;
 
         protected override void Dispose(bool disposing)
         {
@@ -35,11 +36,13 @@
             lblLastFertilizing = new Label();
             rtbComments = new RichTextBox();
             picPhoto = new PictureBox();
+            btnDeleteCareLog = new Button();
+
             ((System.ComponentModel.ISupportInitialize)picPhoto).BeginInit();
             SuspendLayout();
-            // 
+            //
             // tlpMain
-            // 
+            //
             tlpMain.ColumnCount = 3;
             tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
             tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
@@ -50,9 +53,9 @@
             tlpMain.Controls.Add(flowDetails, 0, 0);
             tlpMain.Controls.Add(rtbComments, 1, 0);
             tlpMain.Controls.Add(picPhoto, 2, 0);
-            // 
+            //
             // flowDetails
-            // 
+            //
             flowDetails.FlowDirection = FlowDirection.TopDown;
             flowDetails.AutoSize = true;
             flowDetails.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -63,57 +66,65 @@
             flowDetails.Controls.Add(lblHumidity);
             flowDetails.Controls.Add(lblLastWatering);
             flowDetails.Controls.Add(lblLastFertilizing);
-            // 
+            flowDetails.Controls.Add(btnDeleteCareLog);
+            //
             // lblName
-            // 
+            //
             lblName.AutoSize = true;
             lblName.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblName.Text = "Nazwa";
-            // 
+            //
             // lblRegion
-            // 
+            //
             lblRegion.AutoSize = true;
             lblRegion.Text = "Region";
-            // 
+            //
             // lblSpecies
-            // 
+            //
             lblSpecies.AutoSize = true;
             lblSpecies.Text = "Gatunek";
-            // 
+            //
             // lblTemp
-            // 
+            //
             lblTemp.AutoSize = true;
             lblTemp.Text = "Temperatura";
-            // 
+            //
             // lblHumidity
-            // 
+            //
             lblHumidity.AutoSize = true;
             lblHumidity.Text = "Wilgotność";
-            // 
+            //
             // lblLastWatering
-            // 
+            //
             lblLastWatering.AutoSize = true;
             lblLastWatering.Text = "Ostatnie podlewanie";
-            // 
+            //
             // lblLastFertilizing
-            // 
+            //
             lblLastFertilizing.AutoSize = true;
             lblLastFertilizing.Text = "Ostatnie nawożenie";
-            // 
+            //
+            // btnDeleteCareLog
+            //
+            btnDeleteCareLog.AutoSize = true;
+            btnDeleteCareLog.Name = "btnDeleteCareLog";
+            btnDeleteCareLog.Text = "Usuń wpis";
+            btnDeleteCareLog.Visible = false;
+            //
             // rtbComments
-            // 
+            //
             rtbComments.Dock = DockStyle.Fill;
             rtbComments.ReadOnly = true;
             rtbComments.ScrollBars = RichTextBoxScrollBars.Vertical;
-            // 
+            //
             // picPhoto
-            // 
+            //
             picPhoto.BorderStyle = BorderStyle.FixedSingle;
             picPhoto.Dock = DockStyle.Fill;
             picPhoto.SizeMode = PictureBoxSizeMode.Zoom;
-            // 
+            //
             // PlantDetailsControl
-            // 
+            //
             Controls.Add(tlpMain);
             Name = "PlantDetailsControl";
             Size = new Size(400, 180);
