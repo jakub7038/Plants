@@ -40,10 +40,39 @@ namespace Plants
                 return;
             }
 
-            if (args.Length > 0 && args[0] == "--clean") // argument --clean do seedowanie
+            if (args.Length > 0 && args[0] == "--clean") // argument --clean do czyszczenia bazy danych
             {
                 CleanDatabase(host);
                 return;
+            }
+
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetRequiredService<AppDbContext>();
+                    if (!context.Database.CanConnect())
+                    {
+                        MessageBox.Show(
+                            "Nie mo¿na nawi¹zaæ po³¹czenia z baz¹ danych. Aplikacja zostanie zamkniêta.",
+                            "B³¹d po³¹czenia",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        $"Wyst¹pi³ b³¹d podczas próby po³¹czenia z baz¹ danych:\n{ex.Message}",
+                        "B³¹d po³¹czenia",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                    return;
+                }
             }
 
             ApplicationConfiguration.Initialize();
